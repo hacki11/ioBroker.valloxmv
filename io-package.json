@@ -42,7 +42,7 @@
             "zh-cn": "valloxmv"
         },
         "authors": [
-            "hacki11 <jur.schmid@gmail.com>"
+            "williandalton <jur.schmid@gmail.com>"
         ],
         "keywords": [
             "ioBroker",
@@ -55,8 +55,8 @@
         "main": "main.js",
         "icon": "valloxmv.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/hacki11/ioBroker.valloxmv/master/admin/valloxmv.png",
-        "readme": "https://github.com/hacki11/ioBroker.valloxmv/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/williandalton/ioBroker.valloxmv/master/admin/valloxmv.png",
+        "readme": "https://github.com/williandalton/ioBroker.valloxmv/blob/master/README.md",
         "loglevel": "info",
         "mode": "daemon",
         "type": "climate-control",
@@ -72,8 +72,9 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "host": "192.168.178.20",
+        "port": "80",
+        "interval": 60
     },
     "objects": [],
     "instanceObjects": [

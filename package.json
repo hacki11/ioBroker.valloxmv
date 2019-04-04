@@ -1,12 +1,12 @@
 {
   "name": "iobroker.valloxmv",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "valloxmv",
   "author": {
-    "name": "hacki11",
-    "email": "jur.schmid@gmail.com"
+    "name": "williandalton",
+    "email": "no@mail.com"
   },
-  "homepage": "https://github.com/hacki11/ioBroker.valloxmv",
+  "homepage": "https://github.com/williandalton/ioBroker.valloxmv",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hacki11/ioBroker.valloxmv"
+    "url": "https://github.com/williandalton/ioBroker.valloxmv"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^1.0.3"
@@ -52,7 +52,7 @@
     "lint:js": "eslint"
   },
   "bugs": {
-    "url": "https://github.com/hacki11/ioBroker.valloxmv/issues"
+    "url": "https://github.com/williandalton/ioBroker.valloxmv/issues"
   },
   "readmeFilename": "README.md"
 }
