@@ -54,7 +54,7 @@ function startAdapter(options) {
         // is called if a subscribed state changes
         stateChange: function (id, state) {
             // Warning, state can be null if it was deleted
-            adapter.log.info('stateChange ' + id + ' ' + JSON.stringify(state));
+            //adapter.log.info('stateChange ' + id + ' ' + JSON.stringify(state));
             
             // Update von Aktualisierung
             //stateChange valloxmv.0.profiles.away.A_CYC_AWAY_AIR_TEMP_TARGET {"val":15,"ack":true,"ts":1554378692864,"q":0,"from":"system.adapter.valloxmv.0","lc":1554378662888}
@@ -118,64 +118,21 @@ function startAdapter(options) {
 function main() {
 
     // The adapters config (in the instance object everything under the attribute "native") is accessible via
-    // adapter.config:
-
-    
-
+    // adapter.config:  
     adapter.log.info('Host: '     + adapter.config.host);
     adapter.log.info('Port: '     + adapter.config.port);
     adapter.log.info('Interval: ' + adapter.config.interval);
-
-    if( adapter.config.host == null || adapter.config.host == 'undefined' )
-    {        
-        adapter.config.host = '192.168.178.24';
-        adapter.log.info("set adapter.config.host to default: " + adapter.config.host);
-    }
-
-    if( adapter.config.port == null || adapter.config.port == 'undefined' )
-    {        
-        adapter.config.port = '80';
-        adapter.log.info("set adapter.config.port to default: " + adapter.config.port);
-    }
-
-    if( adapter.config.interval == null || adapter.config.interval == 'undefined' )
-    {        
-        adapter.config.interval = 30;
-        adapter.log.info("set adapter.config.interval to default: " + adapter.config.interval);
-    }
-
-
+    
     initBridge();
     initStates();
 
     // in this template all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
 
-
-    /**
-     *   setState examples
-     *
-     *   you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-     *
-     */
-
-    // the variable testVariable is set to true as command (ack=false)
-    //adapter.setState('testVariable', true);
-
-    // same thing, but the value is flagged "ack"
-    // ack should be always set to true if the value is received from or acknowledged from the target system
-    //adapter.setState('testVariable', {val: true, ack: true});
-
-    // same thing, but the state is deleted after 30s (getState will return null afterwards)
-    //adapter.setState('testVariable', {val: true, ack: true, expire: 30});
-
-
     sync_milliseconds =  adapter.config.interval * 1000; // parseFloat(adapter.config.synctime * 1000 * 60);
     adapter.log.info("Sync time set to " + sync_milliseconds + " ms");
 
     getValloxData();
-
-
 }
 
 
@@ -264,31 +221,33 @@ function getValloxData()    {
 
 }
 
-async function readData(url) {
-    
-    //adapter.log.info("Daten werden geholt..."); 
-
+async function readData(url) {        
    
     const valloxClient = new ValloxWebsocket({  ip: adapter.config.host, port: adapter.config.port });    
     
+
     var keys = []
     for (var key in valloxStateBridges) {    
         keys.push(key);
     }
     
-    const results = await valloxClient.fetchMetrics( keys );
-    adapter.setState('info.connection', true );
-       
+    try
+    {        
+        const results = await valloxClient.fetchMetrics( keys );
+        
+        adapter.setState('info.connection', true );        
 
-    for (var key in valloxStateBridges) {    
-        var obj =  valloxStateBridges[key];
-        //addState( , obj.VlxDevConstant, 'state', obj.DataType, 'indicator', obj.AllowWrite );    
-        adapter.log.info( "Setting State: "+ obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant + " to Value: " + key );
-        adapter.setState(obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant, {val: results[key], ack: true} )
+        for (var key in valloxStateBridges) {    
+            var obj =  valloxStateBridges[key];
+            
+            adapter.log.info( "Setting State: "+ obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant + " to Value: " + key );
+            adapter.setState(obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant, {val: results[key], ack: true} )
+        }
+    }    catch(error)
+    {
+        adapter.log.error(error); 
+        adapter.setState('info.connection', false );
     }
-
-
-
 }
 
 

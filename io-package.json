@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "valloxmv",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "news": {
             "0.0.1": {
                 "en": "initial release",
@@ -42,13 +42,14 @@
             "zh-cn": "valloxmv"
         },
         "authors": [
-            "williandalton <jur.schmid@gmail.com>"
+            "williandalton <todo@gmail.com>"
         ],
         "keywords": [
             "ioBroker",
             "template",
             "Smart Home",
-            "home automation"
+            "home automation",
+            "Vallox"
         ],
         "license": "MIT",
         "platform": "Javascript/Node.js",
@@ -62,6 +63,7 @@
         "type": "climate-control",
         "compact": true,
         "materialize": true,
+        "messagebox": false,
         "dependencies": [
             {
                 "admin": ">=3.0.0"

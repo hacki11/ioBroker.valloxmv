@@ -4,7 +4,7 @@
   "description": "valloxmv",
   "author": {
     "name": "williandalton",
-    "email": "no@mail.com"
+    "email": "todo@gmail.com"
   },
   "homepage": "https://github.com/williandalton/ioBroker.valloxmv",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "url": "https://github.com/williandalton/ioBroker.valloxmv"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "github:iobroker/adapter-core"
   },
   "devDependencies": {
     "@iobroker/testing": "^1.2.0",
