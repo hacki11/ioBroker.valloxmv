@@ -143,27 +143,47 @@ function initBridge()
      let configSection ="";
 
      configSection = "states"; 
-     valloxStateBridges['A_CYC_TEMP_SUPPLY_AIR'] = new ValloxStateBridge( "A_CYC_TEMP_SUPPLY_AIR", configSection, "number", "indicator", true  )
-     valloxStateBridges['A_CYC_TEMP_OUTDOOR_AIR'] = new ValloxStateBridge( "A_CYC_TEMP_OUTDOOR_AIR", configSection, "number", "indicator", true  );
-     valloxStateBridges['A_CYC_TEMP_EXHAUST_AIR'] = new ValloxStateBridge( "A_CYC_TEMP_EXHAUST_AIR", configSection, "number", "indicator", true  );
-     valloxStateBridges['A_CYC_TEMP_EXTRACT_AIR'] = new ValloxStateBridge( "A_CYC_TEMP_EXTRACT_AIR", configSection, "number", "indicator", true  );
-     valloxStateBridges['A_CYC_TEMP_SUPPLY_CELL_AIR'] = new ValloxStateBridge( "A_CYC_TEMP_SUPPLY_CELL_AIR", configSection, "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_TEMP_SUPPLY_AIR'] = new ValloxStateBridge( configSection, "A_CYC_TEMP_SUPPLY_AIR", "", "number", "indicator", true  )
+     valloxStateBridges['A_CYC_TEMP_OUTDOOR_AIR'] = new ValloxStateBridge( configSection, "A_CYC_TEMP_OUTDOOR_AIR", "", "number", "indicator", true  );
+     valloxStateBridges['A_CYC_TEMP_EXHAUST_AIR'] = new ValloxStateBridge( configSection, "A_CYC_TEMP_EXHAUST_AIR", "", "number", "indicator", true  );
+     valloxStateBridges['A_CYC_TEMP_EXTRACT_AIR'] = new ValloxStateBridge( configSection, "A_CYC_TEMP_EXTRACT_AIR", "", "number", "indicator", true  );
+     valloxStateBridges['A_CYC_TEMP_SUPPLY_CELL_AIR'] = new ValloxStateBridge( configSection, "A_CYC_TEMP_SUPPLY_CELL_AIR", "", "number", "indicator", true  ); 
      
      configSection = "profiles.home";
-     valloxStateBridges['A_CYC_HOME_RH_CTRL_ENABLED'] = new ValloxStateBridge( "A_CYC_HOME_RH_CTRL_ENABLED", configSection, "boolean", "indicator", true  ); 
-     valloxStateBridges['A_CYC_HOME_CO2_CTRL_ENABLED'] = new  ValloxStateBridge( "A_CYC_HOME_CO2_CTRL_ENABLED",configSection, "boolean", "indicator", true  ); 
-     valloxStateBridges['A_CYC_HOME_SPEED_SETTING'] = new  ValloxStateBridge( "A_CYC_HOME_SPEED_SETTING",configSection, "number", "indicator", true  ); 
-     valloxStateBridges['A_CYC_HOME_AIR_TEMP_TARGET'] = new  ValloxStateBridge( "A_CYC_HOME_AIR_TEMP_TARGET",configSection, "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_HOME_RH_CTRL_ENABLED'] = new ValloxStateBridge( configSection, "A_CYC_HOME_RH_CTRL_ENABLED", "Feuchtigkeitsteuerung aktiv", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_HOME_CO2_CTRL_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_HOME_CO2_CTRL_ENABLED","CO2 Steuerung aktiv", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_HOME_SPEED_SETTING'] = new  ValloxStateBridge( configSection, "A_CYC_HOME_SPEED_SETTING","Ventilatorleistung %", "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_HOME_AIR_TEMP_TARGET'] = new  ValloxStateBridge( configSection, "A_CYC_HOME_AIR_TEMP_TARGET","Zuluft °C", "number", "indicator", true  ); 
 
      configSection = "profiles.away";
-     valloxStateBridges['A_CYC_AWAY_RH_CTRL_ENABLED'] = new ValloxStateBridge( "A_CYC_AWAY_RH_CTRL_ENABLED", configSection, "boolean", "indicator", true  ); 
-     valloxStateBridges['A_CYC_AWAY_CO2_CTRL_ENABLED'] = new  ValloxStateBridge( "A_CYC_AWAY_CO2_CTRL_ENABLED",configSection, "boolean", "indicator", true  ); 
-     valloxStateBridges['A_CYC_AWAY_SPEED_SETTING'] = new  ValloxStateBridge( "A_CYC_AWAY_SPEED_SETTING",configSection, "number", "indicator", true  ); 
-     valloxStateBridges['A_CYC_AWAY_AIR_TEMP_TARGET'] = new  ValloxStateBridge( "A_CYC_AWAY_AIR_TEMP_TARGET",configSection, "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_AWAY_RH_CTRL_ENABLED'] = new ValloxStateBridge( configSection, "A_CYC_AWAY_RH_CTRL_ENABLED", "Feuchtigkeitsteuerung aktiv", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_AWAY_CO2_CTRL_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_AWAY_CO2_CTRL_ENABLED","CO2 Steuerung aktiv", "boolean", "indicator", true  );      
+     valloxStateBridges['A_CYC_AWAY_SPEED_SETTING'] = new  ValloxStateBridge( configSection, "A_CYC_AWAY_SPEED_SETTING","Ventilatorleistung %", "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_AWAY_AIR_TEMP_TARGET'] = new  ValloxStateBridge( configSection, "A_CYC_AWAY_AIR_TEMP_TARGET","Zuluft °C", "number", "indicator", true  ); 
+
+     configSection = "profiles.boost";
+     valloxStateBridges['A_CYC_BOOST_RH_CTRL_ENABLED'] = new ValloxStateBridge( configSection, "A_CYC_BOOST_RH_CTRL_ENABLED", "Feuchtigkeitsteuerung aktiv", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_BOOST_CO2_CTRL_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_CO2_CTRL_ENABLED","CO2 Steuerung aktiv", "boolean", "indicator", true  );      
+     valloxStateBridges['A_CYC_BOOST_SPEED_SETTING'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_SPEED_SETTING","Ventilatorleistung %", "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_BOOST_AIR_TEMP_TARGET'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_AIR_TEMP_TARGET","Zuluft °C", "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_BOOST_TIMER'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_TIMER","Zeit verbleibend", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_BOOST_TIME'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_TIME","Dauer in Min", "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_BOOST_TIMER_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_TIMER_ENABLED","Timersteuerung", "number", "indicator", true  ); 
+
+
+     configSection = "profiles.fireplace";
+     valloxStateBridges['A_CYC_FIREPLACE_SUPP_FAN'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_SUPP_FAN","Zuluftventilator %", "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_FIREPLACE_EXTR_FAN'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_EXTR_FAN","Abluftventilator %", "number", "indicator", true  );      
+     valloxStateBridges['A_CYC_FIREPLACE_TIMER'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_TIMER","Zeit verbleibend", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_FIREPLACE_TIME'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_TIME","Dauer in Min", "number", "indicator", true  ); 
+     valloxStateBridges['A_CYC_FIREPLACE_TIMER_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_TIMER_ENABLED","Timersteuerung", "number", "indicator", true  ); 
+
 
      configSection = "info";     
-     valloxStateBridges["A_CYC_SERIAL_NUMBER_MSW"] =  new ValloxStateBridge( "A_CYC_SERIAL_NUMBER_MSW", configSection, "string", "indicator", false);
-     valloxStateBridges["A_CYC_SERIAL_NUMBER_LSW"] =  new ValloxStateBridge( "A_CYC_SERIAL_NUMBER_LSW", configSection, "string", "indicator", false);     
+     valloxStateBridges["A_CYC_SERIAL_NUMBER_MSW"] =  new ValloxStateBridge( configSection, "A_CYC_SERIAL_NUMBER_MSW", "", "string", "indicator", false);
+     valloxStateBridges["A_CYC_SERIAL_NUMBER_LSW"] =  new ValloxStateBridge( configSection, "A_CYC_SERIAL_NUMBER_LSW", "", "string", "indicator", false);     
+
+     valloxStateBridges["A_CYC_MODE"] =  new ValloxStateBridge( configSection, "A_CYC_MODE", "Mode", "string", "indicator", false); 
 
 }
 
@@ -172,10 +192,10 @@ function initStates()
 {
     
     addState('profiles', '', 'channel', '', '', false);
-    addState('profiles.home', '', 'channel','', '', false);
-    addState('profiles.away', '', 'channel','', '', false);
-    //addState('Profiles', '', 'channel', false);
-    //addState('Profiles', '', 'channel', false);
+    addState('profiles.home', 'Anwesend', 'channel','', '', false);
+    addState('profiles.away', 'Abwesend', 'channel','', '', false);
+    addState('profiles.boost', 'Stosslüftung', 'channel', false);
+    addState('profiles.fireplace', 'Kaminfunktion', 'channel', false);
     addState('states', '', 'channel','', '', false);
  
 /*
@@ -188,7 +208,7 @@ function initStates()
 
    for (var key in valloxStateBridges) {    
     var obj =  valloxStateBridges[key];
-    addState( obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant, obj.VlxDevConstant, 'state', obj.DataType, 'indicator', obj.AllowWrite );    
+    addState( obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant, obj.Description, 'state', obj.DataType, 'indicator', obj.AllowWrite );    
    }
 
 
@@ -240,9 +260,17 @@ async function readData(url) {
         for (var key in valloxStateBridges) {    
             var obj =  valloxStateBridges[key];
             
-            adapter.log.info( "Setting State: "+ obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant + " to Value: " + key );
+            //adapter.log.info( "Setting State: "+ obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant + " to Value: " + key );
             adapter.setState(obj.IoBrokerConfigPath  +'.' +  obj.VlxDevConstant, {val: results[key], ack: true} )
         }
+
+
+
+
+
+
+
+
     }    catch(error)
     {
         adapter.log.error(error); 
