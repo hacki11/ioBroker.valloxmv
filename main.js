@@ -166,7 +166,7 @@ function initBridge()
      valloxStateBridges['A_CYC_BOOST_CO2_CTRL_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_CO2_CTRL_ENABLED","CO2 Steuerung aktiv", "boolean", "indicator", true  );      
      valloxStateBridges['A_CYC_BOOST_SPEED_SETTING'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_SPEED_SETTING","Ventilatorleistung %", "number", "indicator", true  ); 
      valloxStateBridges['A_CYC_BOOST_AIR_TEMP_TARGET'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_AIR_TEMP_TARGET","Zuluft °C", "number", "indicator", true  ); 
-     valloxStateBridges['A_CYC_BOOST_TIMER'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_TIMER","Zeit verbleibend", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_BOOST_TIMER'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_TIMER","Zeit verbleibend, Setze auf > 0 um zu aktivieren", "number", "indicator", true  ); 
      valloxStateBridges['A_CYC_BOOST_TIME'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_TIME","Dauer in Min", "number", "indicator", true  ); 
      valloxStateBridges['A_CYC_BOOST_TIMER_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_BOOST_TIMER_ENABLED","Timersteuerung", "number", "indicator", true  ); 
 
@@ -174,7 +174,7 @@ function initBridge()
      configSection = "profiles.fireplace";
      valloxStateBridges['A_CYC_FIREPLACE_SUPP_FAN'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_SUPP_FAN","Zuluftventilator %", "number", "indicator", true  ); 
      valloxStateBridges['A_CYC_FIREPLACE_EXTR_FAN'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_EXTR_FAN","Abluftventilator %", "number", "indicator", true  );      
-     valloxStateBridges['A_CYC_FIREPLACE_TIMER'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_TIMER","Zeit verbleibend", "boolean", "indicator", true  ); 
+     valloxStateBridges['A_CYC_FIREPLACE_TIMER'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_TIMER","Zeit verbleibend, Setze auf > 0 um zu aktivieren", "number", "indicator", true  ); 
      valloxStateBridges['A_CYC_FIREPLACE_TIME'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_TIME","Dauer in Min", "number", "indicator", true  ); 
      valloxStateBridges['A_CYC_FIREPLACE_TIMER_ENABLED'] = new  ValloxStateBridge( configSection, "A_CYC_FIREPLACE_TIMER_ENABLED","Timersteuerung", "number", "indicator", true  ); 
 
@@ -183,7 +183,9 @@ function initBridge()
      valloxStateBridges["A_CYC_SERIAL_NUMBER_MSW"] =  new ValloxStateBridge( configSection, "A_CYC_SERIAL_NUMBER_MSW", "", "string", "indicator", false);
      valloxStateBridges["A_CYC_SERIAL_NUMBER_LSW"] =  new ValloxStateBridge( configSection, "A_CYC_SERIAL_NUMBER_LSW", "", "string", "indicator", false);     
 
-     valloxStateBridges["A_CYC_MODE"] =  new ValloxStateBridge( configSection, "A_CYC_MODE", "Mode", "string", "indicator", false); 
+     valloxStateBridges["A_CYC_MODE"] =  new ValloxStateBridge( configSection, "A_CYC_MODE", "Mode - 0 = Normal, 5 = Off", "number", "indicator", true); 
+
+     valloxStateBridges["A_CYC_STATE"] =  new ValloxStateBridge( configSection, "A_CYC_STATE", "Active Profile - 0 = Normal, 1 = Away", "number", "indicator", true); 
 
 }
 
