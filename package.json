@@ -1,10 +1,10 @@
 {
   "name": "iobroker.valloxmv",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "valloxmv",
   "author": {
     "name": "williandalton",
-    "email": "todo@gmail.com"
+    "email": "wdaltondev@gmail.com"
   },
   "homepage": "https://github.com/williandalton/ioBroker.valloxmv",
   "license": "MIT",

@@ -8,8 +8,8 @@ const utils = require('@iobroker/adapter-core'); // Get common adapter utils
 // read the adapter name from package.json
 const adapterName =  'valloxmv'; // require('./package.json').name.split('.').pop();
 
-const ValloxWebsocket =  require("ioBroker.valloxmv/lib/valloxWebsocket");
-const ValloxStateBridge = require("ioBroker.valloxmv/lib/valloxStateBridge");
+const ValloxWebsocket =  require("./lib/valloxWebsocket");
+const ValloxStateBridge = require("./lib/valloxStateBridge");
 
 let valloxClient = null;
 let valloxStateBridges = null;
