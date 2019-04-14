@@ -1,6 +1,6 @@
 {
   "name": "iobroker.valloxmv",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "valloxmv",
   "author": {
     "name": "williandalton",
@@ -19,6 +19,7 @@
     "url": "https://github.com/williandalton/ioBroker.valloxmv"
   },
   "dependencies": {
+    "@danielbayerlein/vallox-api": "git+https://github.com/danielbayerlein/vallox-api.git",
     "@iobroker/adapter-core": "github:iobroker/adapter-core"
   },
   "devDependencies": {
