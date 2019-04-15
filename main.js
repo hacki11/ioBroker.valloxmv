@@ -35,9 +35,14 @@ class Valloxmv extends utils.Adapter {
      */
     async onReady() {
 
-        this.log.info(`Establish connection to Vallox (${this.config.host}:${this.config.port})`);
+        this.log.info(`Establish connection to ValloxMV (${this.config.host}:${this.config.port})`);
 
         this.client = new Vallox({ip: this.config.host, port: this.config.port});
+        // fetch a metric to check connection
+        this.client.fetchMetric('A_CYC_APPL_SW_VERSION');
+
+        this.log.info("Connected successfully");
+        this.setState("info.connection", true);
 
         for (let [key, val] of VlxConfigs) {
             await this.setObjectAsync(key, val.obj);
