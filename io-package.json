@@ -72,8 +72,9 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "host": "",
+        "port": "80",
+        "interval": "120"
     },
     "objects": [],
     "instanceObjects": [
