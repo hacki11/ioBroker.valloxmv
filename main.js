@@ -5,7 +5,7 @@
  */
 const Vallox = require("@danielbayerlein/vallox-api");
 const utils = require("@iobroker/adapter-core");
-const {VlxConfigs} = require("ioBroker.valloxmv/lib/config");
+const {VlxConfigs} = require("./lib/config");
 
 class Valloxmv extends utils.Adapter {
 

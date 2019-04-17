@@ -74,7 +74,7 @@
     "native": {
         "host": "",
         "port": "80",
-        "interval": "120"
+        "interval": "60"
     },
     "objects": [],
     "instanceObjects": [
