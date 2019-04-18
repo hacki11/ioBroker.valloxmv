@@ -5,7 +5,7 @@
  */
 const Vallox = require("@danielbayerlein/vallox-api");
 const utils = require("@iobroker/adapter-core");
-const {VlxConfigs} = require("./lib/config");
+const {VlxConfigs, ProfileConfig} = require("./lib/config");
 
 class Valloxmv extends utils.Adapter {
 
@@ -39,11 +39,12 @@ class Valloxmv extends utils.Adapter {
 
         this.client = new Vallox({ip: this.config.host, port: this.config.port});
         // fetch a metric to check connection
-        this.client.fetchMetric('A_CYC_APPL_SW_VERSION');
+        this.client.fetchMetric("A_CYC_APPL_SW_VERSION");
 
         this.log.info("Connected successfully");
         this.setState("info.connection", true);
 
+        await this.setObjectAsync(ProfileConfig.id, ProfileConfig.obj);
         for (let [key, val] of VlxConfigs) {
             await this.setObjectAsync(key, val.obj);
         }
@@ -63,8 +64,18 @@ class Valloxmv extends utils.Adapter {
     }
 
     update() {
+
+        this.client.getProfile()
+            .then((result) => this.setProfile(result))
+            .catch((error) => this.errorHandler(error));
+
         this.client.fetchMetrics(this.keys)
             .then((result) => this.setStates(result))
+            .catch((error) => this.errorHandler(error));
+    }
+
+    setProfile(result) {
+        this.setStateAsync(ProfileConfig.id, {val: result, ack: true})
             .catch((error) => this.errorHandler(error));
     }
 
@@ -125,12 +136,16 @@ class Valloxmv extends utils.Adapter {
             if (this.client && state && !state.ack) {
                 let arr = id.split(".");
                 id = arr[arr.length - 1];
-                if (VlxConfigs.hasOwnProperty(id)) {
-
-                    let obj = {};
-                    obj[VlxConfigs[id].keys[0]] = state.val;
-                    this.client.setValues(obj)
+                if (id === "ACTIVE_PROFILE") {
+                    this.client.setProfile(state.val)
                         .catch((error) => this.errorHandler(error));
+                } else {
+                    if (VlxConfigs.hasOwnProperty(id)) {
+                        let obj = {};
+                        obj[VlxConfigs[id].keys[0]] = state.val;
+                        this.client.setValues(obj)
+                            .catch((error) => this.errorHandler(error));
+                    }
                 }
             }
         } else {
