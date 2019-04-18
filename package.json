@@ -12,7 +12,9 @@
     "ioBroker",
     "template",
     "Smart Home",
-    "home automation"
+    "home automation",
+    "ValloxMV",
+    "Vallox"
   ],
   "repository": {
     "type": "git",
