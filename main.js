@@ -24,7 +24,7 @@ class Valloxmv extends utils.Adapter {
         }
 
         this.on("ready", this.onReady.bind(this));
-        this.on("objectChange", this.onObjectChange.bind(this));
+        // this.on("objectChange", this.onObjectChange.bind(this));
         this.on("stateChange", this.onStateChange.bind(this));
         // this.on("message", this.onMessage.bind(this));
         this.on("unload", this.onUnload.bind(this));
@@ -38,11 +38,6 @@ class Valloxmv extends utils.Adapter {
         this.log.info(`Establish connection to ValloxMV (${this.config.host}:${this.config.port})`);
 
         this.client = new Vallox({ip: this.config.host, port: this.config.port});
-        // fetch a metric to check connection
-        this.client.fetchMetric('A_CYC_APPL_SW_VERSION');
-
-        this.log.info("Connected successfully");
-        this.setState("info.connection", true);
 
         for (let [key, val] of VlxConfigs) {
             await this.setObjectAsync(key, val.obj);
@@ -51,13 +46,11 @@ class Valloxmv extends utils.Adapter {
         // in this template all states changes inside the adapters namespace are subscribed
         this.subscribeStates("*");
 
-        // setup polltimer
-        this.pollInterval = this.config.interval || 60;
-        this.pollInterval *= 1000;
-        if (this.pollInterval < 10000)
-            this.pollInterval = 10000;
-
-        this.polltimer = setInterval(() => this.update(), this.pollInterval);
+        // setup timer
+        this.interval = this.config.interval || 60;
+        this.interval *= 1000;
+        if (this.interval < 10000)
+            this.interval = 10000;
 
         this.update();
     }
@@ -65,7 +58,10 @@ class Valloxmv extends utils.Adapter {
     update() {
         this.client.fetchMetrics(this.keys)
             .then((result) => this.setStates(result))
+            .then(() => this.connectionHandler(true))
             .catch((error) => this.errorHandler(error));
+
+        this.timer = setTimeout(() => this.update(), this.interval);
     }
 
     setStates(result) {
@@ -88,27 +84,11 @@ class Valloxmv extends utils.Adapter {
      */
     onUnload(callback) {
         try {
-            clearInterval(this.polltimer);
+            clearTimeout(this.timer);
             this.log.info("cleaned everything up...");
             callback();
         } catch (e) {
             callback();
-        }
-    }
-
-
-    /**
-     * Is called if a subscribed object changes
-     * @param {string} id
-     * @param {ioBroker.Object | null | undefined} obj
-     */
-    onObjectChange(id, obj) {
-        if (obj) {
-            // The object was changed
-            this.log.debug(`object ${id} changed: ${JSON.stringify(obj)}`);
-        } else {
-            // The object was deleted
-            this.log.info(`object ${id} deleted`);
         }
     }
 
@@ -141,8 +121,21 @@ class Valloxmv extends utils.Adapter {
 
     errorHandler(error) {
         this.log.error(error.message);
-        this.log.error(error.stack);
-        this.setState("info.connection", false);
+        if (error.stack)
+            this.log.error(error.stack);
+        this.connectionHandler(false);
+    }
+
+    connectionHandler(connected) {
+        if (this.connection !== connected) {
+            this.connection = connected;
+            if (connected)
+                this.log.info("Connection established successfully");
+            else
+                this.log.error("Connection failed");
+
+            this.setState("info.connection", this.connection);
+        }
     }
 
     // /**
