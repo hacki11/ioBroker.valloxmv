@@ -19,11 +19,11 @@
         "title": "ValloxMV",
         "titleLang": {
             "en": "ValloxMV Adapter",
-            "de": "ValloxMV Adapter",
+            "de": "ValloxMV Adapter"
         },
         "desc": {
             "en": "ioBroker ValloxMV Adapter",
-            "de": "ioBroker ValloxMV Adapter",
+            "de": "ioBroker ValloxMV Adapter"
         },
         "authors": [
             "hacki11 <jur.schmid@gmail.com>"
