@@ -114,15 +114,16 @@ class Valloxmv extends utils.Adapter {
             this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
             if (this.client && state && !state.ack) {
-                let arr = id.split(".");
-                id = arr[arr.length - 1];
+                let adapter = id.indexOf(".");
+                let instance = id.indexOf(".", adapter + 1);
+                id = id.substr(instance + 1);
                 if (id === "ACTIVE_PROFILE") {
                     this.client.setProfile(state.val)
                         .catch((error) => this.errorHandler(error));
                 } else {
-                    if (VlxConfigs.hasOwnProperty(id)) {
+                    if (VlxConfigs.has(id)) {
                         let obj = {};
-                        obj[VlxConfigs[id].keys[0]] = state.val;
+                        obj[VlxConfigs.get(id).keys[0]] = state.val;
                         this.client.setValues(obj)
                             .catch((error) => this.errorHandler(error));
                     }
