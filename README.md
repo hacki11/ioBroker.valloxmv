@@ -13,9 +13,14 @@
 **Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/hacki11/ioBroker.valloxmv/master.svg)](https://travis-ci.org/hacki11/ioBroker.valloxmv)
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/hacki11/ioBroker.valloxmv?branch=master&svg=true)](https://ci.appveyor.com/project/hacki11/ioBroker-valloxmv/)
 
-## valloxmv adapter for ioBroker
+## ValloxMV adapter for ioBroker
 
-Describe your project here
+Connects your Vallox Air Ventilation system into your ioBroker home automation.
+
+## Usage
+* Install adapter
+* Configure device address and poll interval (60 is minimum)
+* Read and write states as usual
 
 ## Changelog
 

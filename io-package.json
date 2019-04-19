@@ -18,28 +18,12 @@
         },
         "title": "ValloxMV",
         "titleLang": {
-            "en": "ValloxMV",
-            "de": "ValloxMV",
-            "ru": "ValloxMV",
-            "pt": "ValloxMV",
-            "nl": "ValloxMV",
-            "fr": "ValloxMV",
-            "it": "ValloxMV",
-            "es": "Valloxmv",
-            "pl": "ValloxMV",
-            "zh-cn": "ValloxMV"
+            "en": "ValloxMV Adapter",
+            "de": "ValloxMV Adapter"
         },
         "desc": {
-            "en": "valloxmv",
-            "de": "valloxmv",
-            "ru": "valloxmv",
-            "pt": "valloxmv",
-            "nl": "valloxmv",
-            "fr": "Valloxmv",
-            "it": "valloxmv",
-            "es": "Valloxmv",
-            "pl": "valloxmv",
-            "zh-cn": "valloxmv"
+            "en": "ioBroker ValloxMV Adapter",
+            "de": "ioBroker ValloxMV Adapter"
         },
         "authors": [
             "hacki11 <jur.schmid@gmail.com>"
@@ -48,7 +32,8 @@
             "ioBroker",
             "template",
             "Smart Home",
-            "home automation"
+            "home automation",
+            "Vallox"
         ],
         "license": "MIT",
         "platform": "Javascript/Node.js",
