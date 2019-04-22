@@ -23,6 +23,9 @@ Connects your Vallox Air Ventilation system into your ioBroker home automation.
 
 ## Changelog
 
+### 0.1.2
+* add State 'NORMAL' to A_CYC_MODE (@williandalton)
+
 ### 0.1.1
 * fix io-package.json version number
 
