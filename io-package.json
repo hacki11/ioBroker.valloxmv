@@ -2,6 +2,12 @@
     "common": {
         "name": "valloxmv",
         "version": "0.1.2",
+        "news": {
+          "0.1.2": {
+            "en": "Initial release for testing",
+            "de": "Erstes Release für Tests"
+          }
+        },
         "title": "ValloxMV",
         "titleLang": {
             "en": "ValloxMV Adapter",
