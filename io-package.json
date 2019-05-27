@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "0.1.3",
+    "version": "1.0.0",
     "news": {
+      "1.0.0": {
+        "en": "Changed role of r/w booleans to switches, fixed empty drop downs",
+        "de": "r/w booleans als switch deklariert, leere Drop Down Felder behoben"
+      },
       "0.1.3": {
         "en": "Added expert settins",
         "de": "Experteneinstellungen hinzugefügt"
