@@ -24,28 +24,20 @@ class Valloxmv extends utils.Adapter {
         }
 
         this.on("ready", this.onReady.bind(this));
-        // this.on("objectChange", this.onObjectChange.bind(this));
         this.on("stateChange", this.onStateChange.bind(this));
-        // this.on("message", this.onMessage.bind(this));
         this.on("unload", this.onUnload.bind(this));
     }
 
-    /**
-     * Is called when databases are connected and adapter received configuration.
-     */
     async onReady() {
 
         this.log.info(`Establish connection to ValloxMV (${this.config.host}:${this.config.port})`);
 
         this.client = new Vallox({ip: this.config.host, port: this.config.port});
 
-        await this.setObjectAsync(ProfileConfig.id, ProfileConfig.obj);
+        await this.setObjectNotExistsAsync(ProfileConfig.id, ProfileConfig.obj);
         for (let [key, val] of VlxConfigs) {
-            await this.setObjectAsync(key, val.obj);
+            await this.setObjectNotExistsAsync(key, val.obj);
         }
-
-        // in this template all states changes inside the adapters namespace are subscribed
-        this.subscribeStates("*");
 
         // setup timer
         this.interval = this.config.interval || 60;
@@ -153,24 +145,6 @@ class Valloxmv extends utils.Adapter {
             this.setState("info.connection", this.connection);
         }
     }
-
-    // /**
-    //  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-    //  * Using this method requires "common.message" property to be set to true in io-package.json
-    //  * @param {ioBroker.Message} obj
-    //  */
-    // onMessage(obj) {
-    // 	if (typeof obj === "object" && obj.message) {
-    // 		if (obj.command === "send") {
-    // 			// e.g. send email or pushover or whatever
-    // 			this.log.info("send command");
-
-    // 			// Send response in callback if required
-    // 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
-    // 		}
-    // 	}
-    // }
-
 }
 
 if (module.parent) {
