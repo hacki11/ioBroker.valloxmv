@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "news": {
+      "1.0.3": {
+        "en": "Fixed adapter checker issues",
+        "de": "Fixed adapter checker issues"
+      },
       "1.0.2": {
         "en": "Fixed issue writing objects",
         "de": "Problem beim Schreiben von Objekten behoben"
