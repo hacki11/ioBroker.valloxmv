@@ -22,6 +22,9 @@ Connects your Vallox Air Ventilation system into your ioBroker home automation.
 * Read and write states as usual
 
 ## Changelog
+### 1.0.2
+* Added subscriptions of own objects to allow write values
+
 ### 1.0.1 
 * Fixed resetting custom configuration of objects
 * Removed subscription of own objects
