@@ -39,6 +39,8 @@ class Valloxmv extends utils.Adapter {
             await this.setObjectNotExistsAsync(key, val.obj);
         }
 
+        this.subscribeStates("*");
+
         // setup timer
         this.interval = this.config.interval || 60;
         this.interval *= 1000;

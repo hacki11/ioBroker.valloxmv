@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "news": {
+      "1.0.2": {
+        "en": "Fixed issue writing objects",
+        "de": "Problem beim Schreiben von Objekten behoben"
+      },
       "1.0.1": {
         "en": "Fixed resetting custom configuration of objects",
         "de": "Überschreiben manuell veränderter Objekt-Konfiguration behoben"
