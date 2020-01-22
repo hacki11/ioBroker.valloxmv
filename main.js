@@ -6,6 +6,7 @@
 const Vallox = require("@danielbayerlein/vallox-api");
 const utils = require("@iobroker/adapter-core");
 const {VlxConfigs, ProfileConfig} = require("./lib/config");
+const { URL } = require('url');
 
 class Valloxmv extends utils.Adapter {
 
@@ -47,7 +48,9 @@ class Valloxmv extends utils.Adapter {
         if (this.interval < 10000)
             this.interval = 10000;
 
-        this.update();
+        Valloxmv.validateConfig(this.config)
+            .then(() => this.update())
+            .catch((error) => this.errorHandler(error))
     }
 
     update() {
@@ -146,6 +149,10 @@ class Valloxmv extends utils.Adapter {
 
             this.setState("info.connection", this.connection);
         }
+    }
+
+    static async validateConfig(config) {
+        new URL("ws://" + config.host + ":" + config.port)
     }
 }
 
