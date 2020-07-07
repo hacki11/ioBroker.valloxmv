@@ -1,6 +1,6 @@
 {
   "name": "iobroker.valloxmv",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "valloxmv",
   "author": {
     "name": "hacki11",
@@ -21,7 +21,7 @@
     "url": "https://github.com/hacki11/ioBroker.valloxmv"
   },
   "dependencies": {
-    "@danielbayerlein/vallox-api": "^0.1.2",
+    "@danielbayerlein/vallox-api": "^1.0.0",
     "@iobroker/adapter-core": "^1.0.3"
   },
   "devDependencies": {
