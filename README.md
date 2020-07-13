@@ -22,6 +22,10 @@ Connects your Vallox Air Ventilation system into your ioBroker home automation.
 * Read and write states as usual
 
 ## Changelog
+
+### 1.1.1
+* Fix adapter-checker issues
+
 ### 1.1.0
 * A_CYC_BYPASS_LOCKED added
 * A_CYC_SUPP_FAN_BALANCE_BASE added
