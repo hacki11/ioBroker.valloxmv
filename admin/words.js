@@ -16,14 +16,38 @@ systemDictionary = {
     },
     "host": {
         "en": "Host",
-        "de": "Host"
+        "de": "Host",
+        "ru": "хозяин",
+        "pt": "Hospedeiro",
+        "nl": "Gastheer",
+        "fr": "Hôte",
+        "it": "Ospite",
+        "es": "Anfitrión",
+        "pl": "Gospodarz",
+        "zh-cn": "主办"
     },
     "port": {
         "en": "Port",
-        "de": "Port"
+        "de": "Port",
+        "ru": "порт",
+        "pt": "Porta",
+        "nl": "Haven",
+        "fr": "Port",
+        "it": "Porta",
+        "es": "Puerto",
+        "pl": "Port",
+        "zh-cn": "港口"
     },
     "interval": {
         "en": "Interval",
-        "de": "Intervall"
-    }
+        "de": "Intervall",
+        "ru": "интервал",
+        "pt": "Intervalo",
+        "nl": "Interval",
+        "fr": "Intervalle",
+        "it": "Intervallo",
+        "es": "Intervalo",
+        "pl": "Interwał",
+        "zh-cn": "间隔"
+    },
 };
