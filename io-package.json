@@ -71,6 +71,8 @@
     "type": "climate-control",
     "compact": true,
     "materialize": true,
+    "dataSource": "poll",
+    "connectionType": "local",
     "dependencies": [
       {
         "admin": ">=3.0.0"
