@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "news": {
+      "1.1.2": {
+        "en": "Fixed wrong datatype (string) in temperature states instead of numbers",
+        "de": "Werte in Temperaturstates wurden als String statt numbers gespeichert"
+      },
       "1.1.1": {
         "en": "Fixed adapter checker issues",
         "de": "Fixed adapter checker issues"
