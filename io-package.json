@@ -46,8 +46,8 @@
     },
     "title": "ValloxMV",
     "titleLang": {
-      "en": "ValloxMV Adapter",
-      "de": "ValloxMV Adapter"
+      "en": "Control ValloxMV ventilation system",
+      "de": "Steuerung von ValloxMV Lüftungsanlagen"
     },
     "desc": {
       "en": "ioBroker ValloxMV Adapter",
