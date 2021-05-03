@@ -6,7 +6,7 @@
 const Vallox = require("@danielbayerlein/vallox-api");
 const utils = require("@iobroker/adapter-core");
 const {VlxConfigs, ProfileConfig} = require("./lib/config");
-const { URL } = require('url');
+const { URL } = require("url");
 
 class Valloxmv extends utils.Adapter {
 
@@ -20,7 +20,7 @@ class Valloxmv extends utils.Adapter {
         });
 
         this.keys = [];
-        for (let [key, val] of VlxConfigs) {
+        for (const [key, val] of VlxConfigs) {
             this.keys = this.keys.concat(val.keys);
         }
 
@@ -36,7 +36,7 @@ class Valloxmv extends utils.Adapter {
         this.client = new Vallox({ip: this.config.host, port: this.config.port});
 
         await this.setObjectNotExistsAsync(ProfileConfig.id, ProfileConfig.obj);
-        for (let [key, val] of VlxConfigs) {
+        for (const [key, val] of VlxConfigs) {
             await this.setObjectNotExistsAsync(key, val.obj);
         }
 
@@ -50,7 +50,7 @@ class Valloxmv extends utils.Adapter {
 
         Valloxmv.validateConfig(this.config)
             .then(() => this.update())
-            .catch((error) => this.errorHandler(error))
+            .catch((error) => this.errorHandler(error));
     }
 
     update() {
@@ -60,7 +60,7 @@ class Valloxmv extends utils.Adapter {
             .catch((error) => this.errorHandler(error));
 
         this.client.fetchMetrics(this.keys)
-            .then((result) => this.setStates(result))
+            .then(result => this.setStates(result))
             .then(() => this.connectionHandler(true))
             .catch((error) => this.errorHandler(error));
 
@@ -73,13 +73,13 @@ class Valloxmv extends utils.Adapter {
     }
 
     setStates(result) {
-        for (let [key, vlxConfig] of VlxConfigs) {
+        for (const [key, vlxConfig] of VlxConfigs) {
 
-            let values = Object.keys(result)
+            const values = Object.keys(result)
                 .filter((key) => vlxConfig.keys.includes(key))
                 .map((key) => result[key]);
 
-            let value = vlxConfig.processingFunc(values);
+            const value = vlxConfig.processingFunc(values);
 
             this.setStateAsync(key, {val: value, ack: true})
                 .catch((error) => this.errorHandler(error));
@@ -111,15 +111,15 @@ class Valloxmv extends utils.Adapter {
             this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
             if (this.client && state && !state.ack) {
-                let adapter = id.indexOf(".");
-                let instance = id.indexOf(".", adapter + 1);
+                const adapter = id.indexOf(".");
+                const instance = id.indexOf(".", adapter + 1);
                 id = id.substr(instance + 1);
                 if (id === "ACTIVE_PROFILE") {
                     this.client.setProfile(state.val)
                         .catch((error) => this.errorHandler(error));
                 } else {
                     if (VlxConfigs.has(id)) {
-                        let obj = {};
+                        const obj = {};
                         obj[VlxConfigs.get(id).keys[0]] = state.val;
                         this.client.setValues(obj)
                             .catch((error) => this.errorHandler(error));
@@ -147,20 +147,18 @@ class Valloxmv extends utils.Adapter {
             else
                 this.log.error("Connection failed");
 
-            this.setState("info.connection", this.connection);
+            this.setState("info.connection", {val: this.connection, ack: true});
         }
     }
 
     static async validateConfig(config) {
-        new URL("ws://" + config.host + ":" + config.port)
+        new URL("ws://" + config.host + ":" + config.port);
     }
 }
 
-if (module.parent) {
+// @ts-ignore parent is a valid property on module
+if (module && module.parent) {
     // Export the constructor in compact mode
-    /**
-     * @param {Partial<ioBroker.AdapterOptions>} [options={}]
-     */
     module.exports = (options) => new Valloxmv(options);
 } else {
     // otherwise start the instance directly
