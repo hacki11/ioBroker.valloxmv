@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@danielbayerlein/vallox-api": "^1.0.0",
-    "@iobroker/adapter-core": "^2.4.0"
+    "@iobroker/adapter-core": "^2.5.0"
   },
   "devDependencies": {
     "@iobroker/testing": "^2.4.4",
