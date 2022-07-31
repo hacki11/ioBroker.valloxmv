@@ -86,9 +86,12 @@
         "admin": ">=3.0.0"
       },
       {
-        "js-controller": ">=1.4.2"
+        "js-controller": ">=3.0.0"
       }
-    ]
+    ],
+    "adminUI": {
+      "config": "materialize"
+    }
   },
   "native": {
     "host": "",
