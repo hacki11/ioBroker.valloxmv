@@ -1,10 +1,10 @@
 {
   "name": "iobroker.valloxmv",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "valloxmv",
   "author": {
     "name": "hacki11",
-    "email": "jur.schmid@gmail.com"
+    "email": "hacko@mailbox.org"
   },
   "homepage": "https://github.com/hacki11/ioBroker.valloxmv",
   "license": "MIT",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@danielbayerlein/vallox-api": "^1.0.0",
-    "@iobroker/adapter-core": "^2.5.1"
+    "@iobroker/adapter-core": "^3.2.2"
   },
   "devDependencies": {
     "@iobroker/testing": "^2.6.0",

@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "news": {
+      "1.3.0": {
+        "en": "Updated dependencies (iobroker-core & node)",
+        "de": "Abhängigkeiten aktualisiert (iobroker-core & node)"
+      },
       "1.2.0": {
         "en": "Removed NodeJS 10.x support and upgraded to Admin5 and jscontroller 3.3",
         "de": "NodeJS 10.x support entfernt und auf Admin5 und jscontroller 3.3 aktualisiert"
