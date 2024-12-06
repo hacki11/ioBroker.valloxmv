@@ -20,6 +20,9 @@
     "type": "git",
     "url": "https://github.com/hacki11/ioBroker.valloxmv"
   },
+  "engines": {
+    "node": ">= 18"
+  },
   "dependencies": {
     "@danielbayerlein/vallox-api": "^1.0.0",
     "@iobroker/adapter-core": "^3.2.2"
