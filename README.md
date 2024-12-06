@@ -85,4 +85,4 @@ Connects your Vallox Air Ventilation system into your ioBroker home automation.
 ## License
 MIT License
 
-Copyright (c) 2022 hacki11
+Copyright (c) 2024 hacki11
