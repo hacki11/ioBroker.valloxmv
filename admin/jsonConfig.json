@@ -1,6 +1,6 @@
 {
-    "type": "panel",
     "i18n": true,
+    "type": "panel",
     "items": {
         "header": {
             "newLine": true,
