@@ -52,7 +52,6 @@
         "de": "Erstes Release für Tests"
       }
     },
-    "title": "ValloxMV",
     "titleLang": {
       "en": "Control ValloxMV ventilation system",
       "de": "Steuerung von ValloxMV Lüftungsanlagen"
@@ -65,15 +64,15 @@
       "hacki11 <jur.schmid@gmail.com>"
     ],
     "keywords": [
-      "ioBroker",
-      "template",
-      "Smart Home",
-      "home automation",
-      "Vallox"
+      "Vallox",
+      "air",
+      "ventilation"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "valloxmv.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/hacki11/ioBroker.valloxmv/master/admin/valloxmv.png",
@@ -82,20 +81,22 @@
     "mode": "daemon",
     "type": "climate-control",
     "compact": true,
-    "materialize": true,
     "dataSource": "poll",
     "connectionType": "local",
     "dependencies": [
       {
-        "admin": ">=3.0.0"
-      },
-      {
-        "js-controller": ">=3.0.0"
+        "js-controller": ">=5.0.19"
       }
     ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.17.14"
+      }
+    ],    
     "adminUI": {
-      "config": "materialize"
-    }
+      "config": "json"
+    },
+    "tier": 2
   },
   "native": {
     "host": "",
