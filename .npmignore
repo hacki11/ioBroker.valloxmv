@@ -20,9 +20,6 @@ tsconfig.json
 iobroker.*.tgz
 package-lock.json
 
-# i18n intermediate files
-admin/i18n
-
 # maintenance scripts
 maintenance/**
 
