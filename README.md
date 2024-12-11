@@ -7,11 +7,14 @@
 [![NPM version](http://img.shields.io/npm/v/iobroker.valloxmv.svg)](https://www.npmjs.com/package/iobroker.valloxmv)
 ![Number of Installations](https://iobroker.live/badges/valloxmv-installed.svg)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.valloxmv.svg)](https://www.npmjs.com/package/iobroker.valloxmv)
-[![Dependency Status](https://img.shields.io/david/hacki11/iobroker.valloxmv.svg)](https://david-dm.org/hacki11/iobroker.valloxmv)
-[![Known Vulnerabilities](https://snyk.io/test/github/hacki11/ioBroker.valloxmv/badge.svg)](https://snyk.io/test/github/hacki11/ioBroker.valloxmv)
+
 ![Test and Release](https://github.com/hacki11/ioBroker.valloxmv/workflows/Test%20and%20Release/badge.svg)
+[![Known Vulnerabilities](https://snyk.io/test/github/hacki11/ioBroker.valloxmv/badge.svg)](https://snyk.io/test/github/hacki11/ioBroker.valloxmv)
+
+[![Dependency Status](https://img.shields.io/david/hacki11/iobroker.valloxmv.svg)](https://david-dm.org/hacki11/iobroker.valloxmv)
 [![NPM](https://nodei.co/npm/iobroker.valloxmv.png?downloads=true)](https://nodei.co/npm/iobroker.valloxmv/)
 [![Travis-CI](http://img.shields.io/travis/hacki11/ioBroker.valloxmv/master.svg)](https://travis-ci.org/hacki11/ioBroker.valloxmv)
+
 
 ## ValloxMV adapter for ioBroker
 
