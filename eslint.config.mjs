@@ -19,7 +19,8 @@ export default [
             'admin/admin.d.ts',
             '**/adapter-config.d.ts',
             'node_modules/',
-            'lib/vallox-textmap.js'     
+            'lib/vallox-textmap.js',
+            'gulpfile.js'     
         ] 
     },
 
@@ -30,7 +31,9 @@ export default [
             'no-unused-vars': 'off',
             '@typescript-eslint/no-unused-vars': 'off',
             'jsdoc/require-jsdoc': 'off',
-            'jsdoc/require-param-description': 'off'
+            'jsdoc/require-param-description': 'off',
+            'jsdoc/require-returns-description': 'off',
+            'no-prototype-builtins': 'off'
         },
     },
     
