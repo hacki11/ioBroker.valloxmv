@@ -21,7 +21,7 @@
     "url": "https://github.com/hacki11/ioBroker.valloxmv"
   },
   "engines": {
-    "node": ">= 18"
+    "node": ">= 20"
   },
   "dependencies": {
     "@danielbayerlein/vallox-api": "^1.0.0",
