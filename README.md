@@ -27,6 +27,10 @@ Connects your Vallox Air Ventilation system into your ioBroker home automation.
 
 ## Changelog
 
+## 1.4.0
+* Maintenance Release
+* Bump engines to NodeJS 20 as minimum version
+
 ## 1.3.0
 * Maintenance Release
 * Updated dependencies (iobroker-core & node)
