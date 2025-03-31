@@ -1,8 +1,8 @@
 {
-  "common": {
-    "name": "valloxmv",
-    "version": "1.4.0",
-    "news": {
+    "common": {
+        "name": "valloxmv",
+        "version": "1.4.0",
+        "news": {
       "1.4.0": {
         "en": "Maintenance: Set NodeJS 20 as minimum version",
         "de": "Wartung: NodeJS 20 als Mindestversion einstellen",
@@ -106,23 +106,23 @@
         "pl": "Naprawiono problemy ze sprawdzaniem adaptera",
         "uk": "Виправлено проблеми перевірки адаптера",
         "zh-cn": "修复了适配器检查器问题"
-      }
-    },
-    "titleLang": {
-      "en": "Control ValloxMV ventilation system",
-      "de": "Steuerung von ValloxMV Lüftungsanlagen",
-      "ru": "Управление системой вентиляции ValloxMV",
-      "pt": "Sistema de ventilação de controle ValloxMV",
-      "nl": "Controle ValloxMV ventilatiesysteem",
-      "fr": "Contrôler le système de ventilation ValloxMV",
-      "it": "Controllo del sistema di ventilazione ValloxMV",
-      "es": "Controlar el sistema de ventilación ValloxMV",
-      "pl": "Sterowanie systemem wentylacji ValloxMV",
-      "uk": "Система управління вентиляцією ValloxMV",
-      "zh-cn": "控制 ValloxMV 通风系统"
-    },
-    "desc": {
-      "en": "ioBroker ValloxMV Adapter",
+            }
+        },
+        "titleLang": {
+            "en": "Control ValloxMV ventilation system",
+            "de": "Steuerung von ValloxMV Lüftungsanlagen",
+            "ru": "Управление системой вентиляции ValloxMV",
+            "pt": "Sistema de ventilação de controle ValloxMV",
+            "nl": "Controle ValloxMV ventilatiesysteem",
+            "fr": "Contrôler le système de ventilation ValloxMV",
+            "it": "Controllo del sistema di ventilazione ValloxMV",
+            "es": "Controlar el sistema de ventilación ValloxMV",
+            "pl": "Sterowanie systemem wentylacji ValloxMV",
+            "uk": "Система управління вентиляцією ValloxMV",
+            "zh-cn": "控制 ValloxMV 通风系统"
+        },
+        "desc": {
+            "en": "ioBroker ValloxMV Adapter",
       "de": "ioBroker ValloxMV Adapter",
       "ru": "Адаптер ioBroker ValloxMV",
       "pt": "Adaptador ioBroker ValloxMV",
@@ -133,72 +133,73 @@
       "pl": "Adapter ioBroker ValloxMV",
       "uk": "Адаптер ioBroker ValloxMV",
       "zh-cn": "ioBroker ValloxMV 适配器"
+        },
+        "authors": [
+            "hacki11 <hacko@mailbox.org>"
+        ],
+        "keywords": [
+            "Vallox",
+            "ValloxMV",
+            "air",
+            "ventilation"
+        ],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "valloxmv.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/hacki11/ioBroker.valloxmv/master/admin/valloxmv.png",
+        "readme": "https://github.com/hacki11/ioBroker.valloxmv/blob/master/README.md",
+        "loglevel": "info",
+        "tier": 2,
+        "mode": "daemon",
+        "type": "climate-control",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=7.4.10"
+            }
+        ]
     },
-    "authors": [
-      "hacki11 <jur.schmid@gmail.com>"
-    ],
-    "keywords": [
-      "Vallox",
-      "air",
-      "ventilation"
-    ],
-    "licenseInformation": {
-      "license": "MIT",
-      "type": "free"
+    "native": {
+        "host": "",
+        "port": "80",
+        "interval": "60"
     },
-    "platform": "Javascript/Node.js",
-    "icon": "valloxmv.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/hacki11/ioBroker.valloxmv/master/admin/valloxmv.png",
-    "readme": "https://github.com/hacki11/ioBroker.valloxmv/blob/master/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "climate-control",
-    "compact": true,
-    "dataSource": "poll",
-    "connectionType": "local",
-    "dependencies": [
-      {
-        "js-controller": ">=5.0.19"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.4.10"
-      }
-    ],
-    "adminUI": {
-      "config": "json"
-    },
-    "tier": 2
-  },
-  "native": {
-    "host": "",
-    "port": "80",
-    "interval": "60"
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    }
-  ]
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
 }
