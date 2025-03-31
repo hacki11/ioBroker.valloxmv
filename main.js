@@ -158,7 +158,7 @@ if (require.main !== module) {
     /**
      * @param {Partial<utils.AdapterOptions>} [options={}]
      */
-    module.exports = (options) => new Valloxmv(options);
+    module.exports = options => new Valloxmv(options);
 } else {
     // otherwise start the instance directly
     new Valloxmv();
