@@ -20,7 +20,7 @@
     "releaseScript": "yes",
     "devServer": "no",
     "indentation": "Space (4)",
-    "quotes": "single",
+    "quotes": "double",
     "authorName": "hacki11",
     "authorGithub": "hacki11",
     "authorEmail": "hacko@mailbox.org",
