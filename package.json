@@ -12,7 +12,8 @@
     "Vallox",
     "ValloxMV",
     "air",
-    "ventilation"
+    "ventilation",
+    "ioBroker"
   ],
   "repository": {
     "type": "git",
