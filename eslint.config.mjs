@@ -33,7 +33,10 @@ export default [
             'jsdoc/require-jsdoc': 'off',
             'jsdoc/require-param-description': 'off',
             'jsdoc/require-returns-description': 'off',
-            'no-prototype-builtins': 'off'
+            'no-prototype-builtins': 'off',
+            'jsdoc/no-defaults': 'off',
+            'jsdoc/no-types': 'off',
+            'jsdoc/tag-lines': 'off'
         },
     },
     

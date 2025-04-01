@@ -1,0 +1,45 @@
+{
+    "cli": true,
+    "target": "directory",
+    "adapterName": "valloxmv",
+    "title": "Control ValloxMV ventilation system",
+    "description": "ioBroker ValloxMV Adapter",
+    "keywords": [
+        "Vallox",
+        "ValloxMV",
+        "air",
+        "ventilation"
+    ],
+    "expert": "yes",
+    "features": [
+        "adapter"
+    ],
+    "adminFeatures": [],
+    "type": "climate-control",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "poll",
+    "connectionIndicator": "yes",
+    "language": "JavaScript",
+    "nodeVersion": "18",
+    "adminUi": "json",
+    "tools": [
+        "ESLint",
+        "type checking",
+        "devcontainer"
+    ],
+    "releaseScript": "yes",
+    "devServer": "no",
+    "indentation": "Space (4)",
+    "quotes": "double",
+    "authorName": "hacki11",
+    "authorGithub": "hacki11",
+    "authorEmail": "hacko@mailbox.org",
+    "gitRemoteProtocol": "HTTPS",
+    "gitCommit": "no",
+    "defaultBranch": "master",
+    "license": "MIT License",
+    "dependabot": "yes",
+    "creatorVersion": "2.6.5",
+    "replay": "/home/hacki/git/ioBroker.valloxmv/.create-adapter.json"
+}
