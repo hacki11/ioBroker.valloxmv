@@ -10,8 +10,15 @@ services:
             - 8081
         volumes:
             - ..:/workspace:cached
-            - iobrokerdata-valloxmv:/opt/iobroker
+            # persisting state in a volume will defeat rebuild container
+          #  - iobrokerdata-valloxmv:/opt/iobroker
         environment:
+            - IOB_OBJECTSDB_TYPE=jsonl
+            - IOB_OBJECTSDB_HOST=127.0.0.1
+            - IOB_OBJECTSDB_PORT=29001
+            - IOB_STATESDB_TYPE=jsonl
+            - IOB_STATESDB_HOST=127.0.0.1
+            - IOB_STATESDB_PORT=29000
             - LANG=en_US.UTF-8
             - LANGUAGE=en_US:en
             - LC_ALL=en_US.UTF-8
@@ -34,5 +41,5 @@ services:
             # Make the ioBroker admin available under http://localhost:8082
             - 8082:80
 
-volumes:
-    iobrokerdata-valloxmv:
+#volumes:
+  #  iobrokerdata-valloxmv:

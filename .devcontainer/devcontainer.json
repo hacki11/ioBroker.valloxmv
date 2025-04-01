@@ -29,7 +29,7 @@
     // "shutdownAction": "none",
 
     // When creating the container, delete unnecessary adapters, disable error reporting, set the license as confirmed, and install/update this adapter, and create a new instance
-    "postCreateCommand": "iob del discovery && iob plugin disable sentry && iob object set system.config common.licenseConfirmed=true && NPM_PACK=$(npm pack) && iob url \"$(pwd)/$NPM_PACK\" --debug && iob add valloxmv && rm \"$NPM_PACK\""
+    "postCreateCommand": ".devcontainer/initialize.sh"
 
     // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
     //"remoteUser": "iobroker"
