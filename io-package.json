@@ -1,205 +1,192 @@
 {
-    "common": {
-        "name": "valloxmv",
-        "version": "1.4.0",
-        "news": {
-            "1.4.0": {
-                "en": "Maintenance: Set NodeJS 20 as minimum version",
-                "de": "Wartung: NodeJS 20 als Mindestversion einstellen",
-                "ru": "Установите NodeJS 20 как минимальную версию",
-                "pt": "Manutenção: Definir NodeJS 20 como versão mínima",
-                "nl": "Onderhoud: Stel NodeJS 20 in als minimale versie",
-                "fr": "Maintenance: Set NodeJS 20 comme version minimale",
-                "it": "Manutenzione: Set NodeJS 20 come versione minima",
-                "es": "Mantenimiento: Set NodeJS 20 como versión mínima",
-                "pl": "Utrzymanie: Ustaw NodeJS 20 jako wersję minimalną",
-                "uk": "Обслуговування: Set NodeJS 20 як мінімальна версія",
-                "zh-cn": "维护: 设置节点JS 20 作为最小版本"
-            },
-            "1.3.0": {
-                "en": "Updated dependencies (iobroker-core & node)",
-                "de": "Abhängigkeiten aktualisiert (iobroker-core & node)",
-                "ru": "Обновлены зависимости (iobroker-core и node)",
-                "pt": "Dependências atualizadas (iobroker-core e node)",
-                "nl": "Bijgewerkte afhankelijkheden (iobroker-core & node)",
-                "fr": "Dépendances mises à jour (iobroker-core & node)",
-                "it": "Dipendenze aggiornate (iobroker-core e nodo)",
-                "es": "Dependencias actualizadas (iobroker-core y nodo)",
-                "pl": "Zaktualizowane zależności (rdzeń i węzeł iobrokera)",
-                "uk": "Оновлені залежності (iobroker-core & node)",
-                "zh-cn": "更新了依赖项（iobroker-core 和节点）"
-            },
-            "1.2.0": {
-                "en": "Removed NodeJS 10.x support and upgraded to Admin5 and jscontroller 3.3",
-                "de": "NodeJS 10.x support entfernt und auf Admin5 und jscontroller 3.3 aktualisiert",
-                "ru": "Удалена поддержка NodeJS 10.x и обновлено до Admin5 и jscontroller 3.3.",
-                "pt": "Removido o suporte ao NodeJS 10.x e atualizado para Admin5 e jscontroller 3.3",
-                "nl": "Ondersteuning voor NodeJS 10.x verwijderd en geüpgraded naar Admin5 en jscontroller 3.3",
-                "fr": "Suppression de la prise en charge de NodeJS 10.x et mise à niveau vers Admin5 et jscontroller 3.3",
-                "it": "Rimosso il supporto NodeJS 10.x e aggiornato ad Admin5 e jscontroller 3.3",
-                "es": "Se eliminó la compatibilidad con NodeJS 10.x y se actualizó a Admin5 y jscontroller 3.3.",
-                "pl": "Usunięto obsługę NodeJS 10.x i zaktualizowano do wersji Admin5 i jscontroller 3.3",
-                "uk": "Видалено підтримку NodeJS 10.x і оновлено до Admin5 і jscontroller 3.3",
-                "zh-cn": "删除了 NodeJS 10.x 支持并升级到 Admin5 和 jscontroller 3.3"
-            },
-            "1.1.3": {
-                "en": "Fixed wrong datatype (number instead of boolean) in profile entries *_ENABLED and fixed setting connection info without ack value",
-                "de": "Objekte *_ENABLED wurden als Int statt bool abgespeichert und die connection info wurde mit fehlendem ack:true gespeichert.",
-                "ru": "Исправлен неправильный тип данных (число вместо логического значения) в записях профиля *_ENABLED и исправлена ​​настройка информации о соединении без значения подтверждения.",
-                "pt": "Corrigido tipo de dados errado (número em vez de booleano) nas entradas de perfil *_ENABLED e informações de conexão de configuração corrigidas sem valor de confirmação",
-                "nl": "Verkeerd datatype (nummer in plaats van Boolean) in profielitems *_ENABLED opgelost en verbindingsinfo voor instellingen zonder ack-waarde opgelost",
-                "fr": "Correction d'un mauvais type de données (nombre au lieu de booléen) dans les entrées de profil *_ENABLED et correction des informations de connexion sans valeur d'accusé de réception",
-                "it": "Risolto il problema con il tipo di dati errato (numero anziché booleano) nelle voci del profilo *_ENABLED e corrette le informazioni di connessione sull'impostazione senza valore di riconoscimento",
-                "es": "Se corrigió el tipo de datos incorrecto (número en lugar de booleano) en las entradas del perfil *_ENABLED y se corrigió la información de conexión de configuración sin valor de reconocimiento",
-                "pl": "Naprawiono błędny typ danych (liczba zamiast wartości logicznej) we wpisach profilu *_ENABLED i poprawiono ustawienie informacji o połączeniu bez wartości potwierdzenia",
-                "uk": "Виправлено неправильний тип даних (число замість логічного значення) у записах профілю *_ENABLED і виправлено інформацію про підключення без значення ack",
-                "zh-cn": "修复了配置文件条目 *_ENABLED 中的错误数据类型（数字而不是布尔值），并修复了没有 ack 值的设置连接信息"
-            },
-            "1.1.2": {
-                "en": "Fixed wrong datatype (string) in temperature states instead of numbers",
-                "de": "Werte in Temperaturstates wurden als String statt numbers gespeichert",
-                "ru": "Исправлен неправильный тип данных (строка) в состояниях температуры вместо чисел.",
-                "pt": "Corrigido tipo de dados errado (string) em estados de temperatura em vez de números",
-                "nl": "Probleem opgelost met het verkeerde datatype (tekenreeks) in temperatuurstatussen in plaats van getallen",
-                "fr": "Correction d'un mauvais type de données (chaîne) dans les états de température au lieu de nombres",
-                "it": "Risolto il problema con il tipo di dati (stringa) errato negli stati di temperatura anziché nei numeri",
-                "es": "Se corrigió el tipo de datos incorrecto (cadena) en los estados de temperatura en lugar de números",
-                "pl": "Naprawiono błędny typ danych (ciąg znaków) w stanach temperatury zamiast liczb",
-                "uk": "Виправлено неправильний тип даних (рядок) у температурах замість чисел",
-                "zh-cn": "修复了温度状态中错误的数据类型（字符串）而不是数字"
-            },
-            "1.1.1": {
-                "en": "Fixed adapter checker issues",
-                "de": "Fixed adapter checker issues",
-                "ru": "Исправлены проблемы с проверкой адаптера.",
-                "pt": "Corrigidos problemas do verificador de adaptador",
-                "nl": "Problemen met de adaptercontrole opgelost",
-                "fr": "Problèmes résolus avec le vérificateur d'adaptateur",
-                "it": "Risolti i problemi di controllo dell'adattatore",
-                "es": "Problemas solucionados con el verificador de adaptadores.",
-                "pl": "Naprawiono problemy ze sprawdzaniem adaptera",
-                "uk": "Виправлено проблеми перевірки адаптера",
-                "zh-cn": "修复了适配器检查器问题"
-            },
-            "1.1.0": {
-                "en": "Added new measurements and parameters",
-                "de": "Neue Messpunkte und Parameter hinzugefügt",
-                "ru": "Добавлены новые измерения и параметры",
-                "pt": "Adicionadas novas medidas e parâmetros",
-                "nl": "Nieuwe metingen en parameters toegevoegd",
-                "fr": "Ajout de nouvelles mesures et paramètres",
-                "it": "Aggiunte nuove misurazioni e parametri",
-                "es": "Se agregaron nuevas medidas y parámetros.",
-                "pl": "Dodano nowe pomiary i parametry",
-                "uk": "Додано нові вимірювання та параметри",
-                "zh-cn": "添加了新的测量和参数"
-            },
-            "1.0.3": {
-                "en": "Fixed adapter checker issues",
-                "de": "Fixed adapter checker issues",
-                "ru": "Исправлены проблемы с проверкой адаптера.",
-                "pt": "Corrigidos problemas do verificador de adaptador",
-                "nl": "Problemen met de adaptercontrole opgelost",
-                "fr": "Problèmes résolus avec le vérificateur d'adaptateur",
-                "it": "Risolti i problemi di controllo dell'adattatore",
-                "es": "Problemas solucionados con el verificador de adaptadores.",
-                "pl": "Naprawiono problemy ze sprawdzaniem adaptera",
-                "uk": "Виправлено проблеми перевірки адаптера",
-                "zh-cn": "修复了适配器检查器问题"
-            }
-        },
-        "titleLang": {
-            "en": "Control ValloxMV ventilation system",
-            "de": "Steuerung von ValloxMV Lüftungsanlagen",
-            "ru": "Управление системой вентиляции ValloxMV",
-            "pt": "Sistema de ventilação de controle ValloxMV",
-            "nl": "Controle ValloxMV ventilatiesysteem",
-            "fr": "Contrôler le système de ventilation ValloxMV",
-            "it": "Controllo del sistema di ventilazione ValloxMV",
-            "es": "Controlar el sistema de ventilación ValloxMV",
-            "pl": "Sterowanie systemem wentylacji ValloxMV",
-            "uk": "Система управління вентиляцією ValloxMV",
-            "zh-cn": "控制 ValloxMV 通风系统"
-        },
-        "desc": {
-            "en": "ioBroker ValloxMV Adapter",
-            "de": "ioBroker ValloxMV Adapter",
-            "ru": "Адаптер ioBroker ValloxMV",
-            "pt": "Adaptador ioBroker ValloxMV",
-            "nl": "ioBroker ValloxMV-adapter",
-            "fr": "Adaptateur ioBroker ValloxMV",
-            "it": "Adattatore ioBroker ValloxMV",
-            "es": "Adaptador ioBroker ValloxMV",
-            "pl": "Adapter ioBroker ValloxMV",
-            "uk": "Адаптер ioBroker ValloxMV",
-            "zh-cn": "ioBroker ValloxMV 适配器"
-        },
-        "authors": [
-            "hacki11 <hacko@mailbox.org>"
-        ],
-        "keywords": [
-            "Vallox",
-            "ValloxMV",
-            "air",
-            "ventilation"
-        ],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "platform": "Javascript/Node.js",
-        "icon": "valloxmv.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/hacki11/ioBroker.valloxmv/master/admin/valloxmv.png",
-        "readme": "https://github.com/hacki11/ioBroker.valloxmv/blob/master/README.md",
-        "loglevel": "info",
-        "tier": 2,
-        "mode": "daemon",
-        "type": "climate-control",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "poll",
-        "adminUI": {
-            "config": "json"
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.4.10"
-            }
-        ]
+  "common": {
+    "name": "valloxmv",
+    "version": "1.4.1",
+    "news": {
+      "1.4.1": {
+        "en": "Maintenance Release\nAdd support for NodeJS 18 as long as iobroker supports\nAdd devcontainer for development\nAdd release script",
+        "de": "Veröffentlichung\nUnterstützung für NodeJS 18 hinzufügen, solange iobroker unterstützt\nDevcontainer für die Entwicklung hinzufügen\nRelease Skript hinzufügen",
+        "ru": "Выпуск технического обслуживания\nДобавьте поддержку NodeJS 18, если поддерживается iobroker\nДобавить devcontainer для развития\nДобавить сценарий",
+        "pt": "Lançamento de Manutenção\nAdicionar suporte para NodeJS 18 desde que suporte iobroker\nAdicionar devcontainer para desenvolvimento\nAdicionar script de versão",
+        "nl": "Onderhoudsvrijgave\nOndersteuning voor NodeJS 18 toevoegen zolang iobroker ondersteunt\nDev container toevoegen voor ontwikkeling\nReleasescript toevoegen",
+        "fr": "Maintenance Libération\nAjouter le support de NodeJS 18 aussi longtemps que le support d'iobroker\nAjouter devcontainer pour le développement\nAjouter le script de sortie",
+        "it": "Comunicato di manutenzione\nAggiungi supporto per NodeJS 18 finché iobroker supporta\nAggiungi devcontainer per lo sviluppo\nAggiungi script di rilascio",
+        "es": "Liberación de mantenimiento\nAñadir soporte para NodeJS 18 siempre y cuando soporte iobroker\nAdd devcontainer for development\nAgregar script de liberación",
+        "pl": "Uwolnienie konserwacji\nDodaj wsparcie dla NodeJS 18 tak długo, jak obsługuje iobroker\nDodaj devcontener dla rozwoju\nDodaj skrypt wydania",
+        "uk": "Реліз технічного обслуговування\nДодайте підтримку NodeJS 18 до тих пір, поки iobroker підтримує\nДодати деконтейнер для розвитку\nДодати скрипт релізу",
+        "zh-cn": "维护版\n添加对 NodeJS 18的支持, 只要 io 经纪公司支持\n添加用于开发的编解码器\n添加发布脚本"
+      },
+      "1.4.0": {
+        "en": "Maintenance: Set NodeJS 20 as minimum version",
+        "de": "Wartung: NodeJS 20 als Mindestversion einstellen",
+        "ru": "Установите NodeJS 20 как минимальную версию",
+        "pt": "Manutenção: Definir NodeJS 20 como versão mínima",
+        "nl": "Onderhoud: Stel NodeJS 20 in als minimale versie",
+        "fr": "Maintenance: Set NodeJS 20 comme version minimale",
+        "it": "Manutenzione: Set NodeJS 20 come versione minima",
+        "es": "Mantenimiento: Set NodeJS 20 como versión mínima",
+        "pl": "Utrzymanie: Ustaw NodeJS 20 jako wersję minimalną",
+        "uk": "Обслуговування: Set NodeJS 20 як мінімальна версія",
+        "zh-cn": "维护: 设置节点JS 20 作为最小版本"
+      },
+      "1.3.0": {
+        "en": "Updated dependencies (iobroker-core & node)",
+        "de": "Abhängigkeiten aktualisiert (iobroker-core & node)",
+        "ru": "Обновлены зависимости (iobroker-core и node)",
+        "pt": "Dependências atualizadas (iobroker-core e node)",
+        "nl": "Bijgewerkte afhankelijkheden (iobroker-core & node)",
+        "fr": "Dépendances mises à jour (iobroker-core & node)",
+        "it": "Dipendenze aggiornate (iobroker-core e nodo)",
+        "es": "Dependencias actualizadas (iobroker-core y nodo)",
+        "pl": "Zaktualizowane zależności (rdzeń i węzeł iobrokera)",
+        "uk": "Оновлені залежності (iobroker-core & node)",
+        "zh-cn": "更新了依赖项（iobroker-core 和节点）"
+      },
+      "1.2.0": {
+        "en": "Removed NodeJS 10.x support and upgraded to Admin5 and jscontroller 3.3",
+        "de": "NodeJS 10.x support entfernt und auf Admin5 und jscontroller 3.3 aktualisiert",
+        "ru": "Удалена поддержка NodeJS 10.x и обновлено до Admin5 и jscontroller 3.3.",
+        "pt": "Removido o suporte ao NodeJS 10.x e atualizado para Admin5 e jscontroller 3.3",
+        "nl": "Ondersteuning voor NodeJS 10.x verwijderd en geüpgraded naar Admin5 en jscontroller 3.3",
+        "fr": "Suppression de la prise en charge de NodeJS 10.x et mise à niveau vers Admin5 et jscontroller 3.3",
+        "it": "Rimosso il supporto NodeJS 10.x e aggiornato ad Admin5 e jscontroller 3.3",
+        "es": "Se eliminó la compatibilidad con NodeJS 10.x y se actualizó a Admin5 y jscontroller 3.3.",
+        "pl": "Usunięto obsługę NodeJS 10.x i zaktualizowano do wersji Admin5 i jscontroller 3.3",
+        "uk": "Видалено підтримку NodeJS 10.x і оновлено до Admin5 і jscontroller 3.3",
+        "zh-cn": "删除了 NodeJS 10.x 支持并升级到 Admin5 和 jscontroller 3.3"
+      },
+      "1.1.3": {
+        "en": "Fixed wrong datatype (number instead of boolean) in profile entries *_ENABLED and fixed setting connection info without ack value",
+        "de": "Objekte *_ENABLED wurden als Int statt bool abgespeichert und die connection info wurde mit fehlendem ack:true gespeichert.",
+        "ru": "Исправлен неправильный тип данных (число вместо логического значения) в записях профиля *_ENABLED и исправлена ​​настройка информации о соединении без значения подтверждения.",
+        "pt": "Corrigido tipo de dados errado (número em vez de booleano) nas entradas de perfil *_ENABLED e informações de conexão de configuração corrigidas sem valor de confirmação",
+        "nl": "Verkeerd datatype (nummer in plaats van Boolean) in profielitems *_ENABLED opgelost en verbindingsinfo voor instellingen zonder ack-waarde opgelost",
+        "fr": "Correction d'un mauvais type de données (nombre au lieu de booléen) dans les entrées de profil *_ENABLED et correction des informations de connexion sans valeur d'accusé de réception",
+        "it": "Risolto il problema con il tipo di dati errato (numero anziché booleano) nelle voci del profilo *_ENABLED e corrette le informazioni di connessione sull'impostazione senza valore di riconoscimento",
+        "es": "Se corrigió el tipo de datos incorrecto (número en lugar de booleano) en las entradas del perfil *_ENABLED y se corrigió la información de conexión de configuración sin valor de reconocimiento",
+        "pl": "Naprawiono błędny typ danych (liczba zamiast wartości logicznej) we wpisach profilu *_ENABLED i poprawiono ustawienie informacji o połączeniu bez wartości potwierdzenia",
+        "uk": "Виправлено неправильний тип даних (число замість логічного значення) у записах профілю *_ENABLED і виправлено інформацію про підключення без значення ack",
+        "zh-cn": "修复了配置文件条目 *_ENABLED 中的错误数据类型（数字而不是布尔值），并修复了没有 ack 值的设置连接信息"
+      },
+      "1.1.2": {
+        "en": "Fixed wrong datatype (string) in temperature states instead of numbers",
+        "de": "Werte in Temperaturstates wurden als String statt numbers gespeichert",
+        "ru": "Исправлен неправильный тип данных (строка) в состояниях температуры вместо чисел.",
+        "pt": "Corrigido tipo de dados errado (string) em estados de temperatura em vez de números",
+        "nl": "Probleem opgelost met het verkeerde datatype (tekenreeks) in temperatuurstatussen in plaats van getallen",
+        "fr": "Correction d'un mauvais type de données (chaîne) dans les états de température au lieu de nombres",
+        "it": "Risolto il problema con il tipo di dati (stringa) errato negli stati di temperatura anziché nei numeri",
+        "es": "Se corrigió el tipo de datos incorrecto (cadena) en los estados de temperatura en lugar de números",
+        "pl": "Naprawiono błędny typ danych (ciąg znaków) w stanach temperatury zamiast liczb",
+        "uk": "Виправлено неправильний тип даних (рядок) у температурах замість чисел",
+        "zh-cn": "修复了温度状态中错误的数据类型（字符串）而不是数字"
+      },
+      "1.1.1": {
+        "en": "Fixed adapter checker issues",
+        "de": "Fixed adapter checker issues",
+        "ru": "Исправлены проблемы с проверкой адаптера.",
+        "pt": "Corrigidos problemas do verificador de adaptador",
+        "nl": "Problemen met de adaptercontrole opgelost",
+        "fr": "Problèmes résolus avec le vérificateur d'adaptateur",
+        "it": "Risolti i problemi di controllo dell'adattatore",
+        "es": "Problemas solucionados con el verificador de adaptadores.",
+        "pl": "Naprawiono problemy ze sprawdzaniem adaptera",
+        "uk": "Виправлено проблеми перевірки адаптера",
+        "zh-cn": "修复了适配器检查器问题"
+      }
     },
-    "native": {
-        "host": "",
-        "port": "80",
-        "interval": "60"
+    "titleLang": {
+      "en": "Control ValloxMV ventilation system",
+      "de": "Steuerung von ValloxMV Lüftungsanlagen",
+      "ru": "Управление системой вентиляции ValloxMV",
+      "pt": "Sistema de ventilação de controle ValloxMV",
+      "nl": "Controle ValloxMV ventilatiesysteem",
+      "fr": "Contrôler le système de ventilation ValloxMV",
+      "it": "Controllo del sistema di ventilazione ValloxMV",
+      "es": "Controlar el sistema de ventilación ValloxMV",
+      "pl": "Sterowanie systemem wentylacji ValloxMV",
+      "uk": "Система управління вентиляцією ValloxMV",
+      "zh-cn": "控制 ValloxMV 通风系统"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "ioBroker ValloxMV Adapter",
+      "de": "ioBroker ValloxMV Adapter",
+      "ru": "Адаптер ioBroker ValloxMV",
+      "pt": "Adaptador ioBroker ValloxMV",
+      "nl": "ioBroker ValloxMV-adapter",
+      "fr": "Adaptateur ioBroker ValloxMV",
+      "it": "Adattatore ioBroker ValloxMV",
+      "es": "Adaptador ioBroker ValloxMV",
+      "pl": "Adapter ioBroker ValloxMV",
+      "uk": "Адаптер ioBroker ValloxMV",
+      "zh-cn": "ioBroker ValloxMV 适配器"
+    },
+    "authors": [
+      "hacki11 <hacko@mailbox.org>"
+    ],
+    "keywords": [
+      "Vallox",
+      "ValloxMV",
+      "air",
+      "ventilation"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "valloxmv.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/hacki11/ioBroker.valloxmv/master/admin/valloxmv.png",
+    "readme": "https://github.com/hacki11/ioBroker.valloxmv/blob/master/README.md",
+    "loglevel": "info",
+    "tier": 2,
+    "mode": "daemon",
+    "type": "climate-control",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.4.10"
+      }
     ]
+  },
+  "native": {
+    "host": "",
+    "port": "80",
+    "interval": "60"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
