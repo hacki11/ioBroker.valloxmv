@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch ioBroker Adapter",
+            "skipFiles": ["<node_internals>/**"],
+            "args": ["--debug", "0"],
+            "program": "${workspaceFolder}/main.js",
+            "outFiles": ["${workspaceFolder}/build/**/*.js"],
+          },
+          {
+            "type": "node-terminal",
+            "name": "Debug Test File",
+            "request": "launch",
+            "command": "npm run test -- ${fileBasenameNoExtension}",
+            "cwd": "${fileDirname}"
+          },
+          {
+            "type": "node-terminal",
+            "name": "Update Adapter",
+            "request": "launch",
+            "command": "NPM_PACK=$(npm pack) && iob url $(pwd)/$NPM_PACK --debug && rm $NPM_PACK",
+            "cwd": "${workspaceFolder}"
+          }
+    ]
+}

@@ -1,7 +1,7 @@
 'use strict';
 
 /*
- * Created with @iobroker/create-adapter v1.11.0
+ * Created with @iobroker/create-adapter v2.6.5
  */
 const Vallox = require('@danielbayerlein/vallox-api');
 const utils = require('@iobroker/adapter-core');
@@ -10,7 +10,7 @@ const { URL } = require('url');
 
 class Valloxmv extends utils.Adapter {
     /**
-     * @param [options]
+     * @param {Partial<utils.AdapterOptions>} [options={}]
      */
     constructor(options) {
         super({
@@ -85,8 +85,7 @@ class Valloxmv extends utils.Adapter {
 
     /**
      * Is called when adapter shuts down - callback has to be called under any circumstances!
-     *
-     * @param callback
+     * @param {() => void} callback
      */
     onUnload(callback) {
         try {
@@ -100,9 +99,8 @@ class Valloxmv extends utils.Adapter {
 
     /**
      * Is called if a subscribed state changes
-     *
-     * @param id
-     * @param state
+     * @param {string} id
+     * @param {ioBroker.State | null | undefined} state
      */
     onStateChange(id, state) {
         if (state) {
@@ -155,9 +153,11 @@ class Valloxmv extends utils.Adapter {
     }
 }
 
-// @ts-expect-error parent is a valid property on module
-if (module && module.parent) {
+if (require.main !== module) {
     // Export the constructor in compact mode
+    /**
+     * @param {Partial<utils.AdapterOptions>} [options={}]
+     */
     module.exports = options => new Valloxmv(options);
 } else {
     // otherwise start the instance directly
