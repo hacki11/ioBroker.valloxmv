@@ -43,7 +43,7 @@
     // "shutdownAction": "none",
 
     // Prepare the devcontainer according to the actual adapter
-    "postCreateCommand": "sh .devcontainer/scripts/postcreate.sh",
+    "postCreateCommand": "sh .devcontainer/scripts/postcreate.sh && sh .devcontainer/scripts/postcreate_ext.sh",
     "postStartCommand": "sh .devcontainer/scripts/poststart.sh",
 
     // Connect as non-root user. See https://aka.ms/vscode-remote/containers/non-root.
