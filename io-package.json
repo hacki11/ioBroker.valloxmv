@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "1.4.1",
+    "version": "1.5.0",
     "news": {
+      "1.5.0": {
+        "en": "Update dependencies\nUpdate minimum node version\nFix ioBroker issues",
+        "de": "Abhängigkeiten aktualisieren\nMindestknotenversion aktualisieren\nProbleme im Zusammenhang mit der",
+        "ru": "Обновление зависимостей\nОбновление минимальной версии узла\nИсправить проблемы ioBroker",
+        "pt": "Atualizar dependências\nActualizar a versão mínima do nó\nCorrigir problemas do ioBroker",
+        "nl": "Afhankelijkheden bijwerken\nMinimale nodeversie bijwerken\nioBroker-problemen oplossen",
+        "fr": "Mise à jour des dépendances\nMettre à jour la version minimale des nœuds\nCorrection des problèmes ioBroker",
+        "it": "Dipendenze di aggiornamento\nAggiorna la versione minima del nodo\nRisolvere i problemi di ioBroker",
+        "es": "Actualizar las dependencias\nActualizar la versión mínima de los nodos\nProblemas de ioBroker",
+        "pl": "Aktualizuj zależności\nAktualizuj minimalną wersję węzła\nPopraw problemy z joBrokerem",
+        "uk": "Оновлення залежності\nОновлення мінімальної версії вузла\nФіксація ioBroker",
+        "zh-cn": "更新依赖关系\n更新最小节点版本\n解决ioBroker问题"
+      },
       "1.4.1": {
         "en": "Maintenance Release\nAdd support for NodeJS 18 as long as iobroker supports\nAdd devcontainer for development\nAdd release script",
         "de": "Veröffentlichung\nUnterstützung für NodeJS 18 hinzufügen, solange iobroker unterstützt\nDevcontainer für die Entwicklung hinzufügen\nRelease Skript hinzufügen",
@@ -80,19 +93,6 @@
         "pl": "Naprawiono błędny typ danych (ciąg znaków) w stanach temperatury zamiast liczb",
         "uk": "Виправлено неправильний тип даних (рядок) у температурах замість чисел",
         "zh-cn": "修复了温度状态中错误的数据类型（字符串）而不是数字"
-      },
-      "1.1.1": {
-        "en": "Fixed adapter checker issues",
-        "de": "Fixed adapter checker issues",
-        "ru": "Исправлены проблемы с проверкой адаптера.",
-        "pt": "Corrigidos problemas do verificador de adaptador",
-        "nl": "Problemen met de adaptercontrole opgelost",
-        "fr": "Problèmes résolus avec le vérificateur d'adaptateur",
-        "it": "Risolti i problemi di controllo dell'adattatore",
-        "es": "Problemas solucionados con el verificador de adaptadores.",
-        "pl": "Naprawiono problemy ze sprawdzaniem adaptera",
-        "uk": "Виправлено проблеми перевірки адаптера",
-        "zh-cn": "修复了适配器检查器问题"
       }
     },
     "titleLang": {
