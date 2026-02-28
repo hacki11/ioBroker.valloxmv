@@ -41,8 +41,11 @@ class Valloxmv extends utils.Adapter {
         this.subscribeStates('*');
 
         // setup timer
-        this.interval = this.config.interval || 60;
-        this.interval *= 1000;
+        this.interval = Number(this.config.interval);
+        if (!Number.isFinite(this.interval) || this.interval <= 0) {
+            this.interval = 60;
+        }
+        this.interval = Math.floor(this.interval) * 1000;
         if (this.interval < 10000) {
             this.interval = 10000;
         }
