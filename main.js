@@ -94,7 +94,7 @@ class Valloxmv extends utils.Adapter {
             .then(() => this.connectionHandler(true))
             .catch(error => this.errorHandler(error));
 
-        this.timer = setTimeout(() => this.update(), this.interval);
+        this.timer = this.setTimeout(() => this.update(), this.interval);
     }
 
     setProfile(result) {
