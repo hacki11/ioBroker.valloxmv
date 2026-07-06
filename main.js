@@ -71,14 +71,15 @@ class Valloxmv extends utils.Adapter {
             return;
         }
 
-        obj.common.states = {
-            0: autoState,
-            ...states,
-        };
-
-        obj.common.min = 0;
-
-        await this.setObject(ProfileConfig.id, obj);
+        await this.extendObject(ProfileConfig.id, {
+            common: {
+                states: {
+                    0: autoState,
+                    ...states,
+                },
+                min: 0,
+            },
+        });
     }
 
     update() {
