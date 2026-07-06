@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "news": {
+      "1.6.0": {
+        "en": "Adapter requires node.js >= 22 now\nAdd support for AUTOMATIC profile on firmware 3.1.4 or newer",
+        "de": "Der Adapter benötigt jetzt Node.js >= 22.\nUnterstützung für das AUTOMATIC-Profil ab Firmware-Version 3.1.4 hinzufügen",
+        "ru": "Для работы адаптера требуется Node.js версии >= 22.\nДобавлена поддержка профиля AUTOMATIC в прошивке версии 3.1.4 или новее.",
+        "pt": "O adaptador agora requer Node.js >= 22.\nAdicionar suporte para o perfil AUTOMÁTICO no firmware 3.1.4 ou posterior.",
+        "nl": "De adapter vereist nu Node.js versie 22 of hoger.\nVoeg ondersteuning voor het AUTOMATIC-profiel toe in firmwareversie 3.1.4 of nieuwer.",
+        "fr": "L'adaptateur nécessite désormais Node.js >= 22.\nAjout de la prise en charge du profil AUTOMATIQUE sur le firmware 3.1.4 ou version ultérieure",
+        "it": "L'adattatore ora richiede Node.js >= 22\nAggiunto il supporto per il profilo AUTOMATICO sul firmware 3.1.4 o versioni successive.",
+        "es": "El adaptador ahora requiere node.js >= 22.\nAgregar compatibilidad con el perfil AUTOMÁTICO en el firmware 3.1.4 o posterior.",
+        "pl": "Adapter wymaga teraz node.js >= 22\nDodano obsługę profilu AUTOMATYCZNEGO w oprogramowaniu układowym 3.1.4 lub nowszym",
+        "uk": "Адаптер тепер вимагає node.js >= 22\nДодано підтримку профілю AUTOMATIC у прошивці 3.1.4 або новішій версії",
+        "zh-cn": "适配器现在需要 node.js 版本 >= 22。\n在固件 3.1.4 或更高版本中添加对自动配置文件的支持"
+      },
       "1.5.0": {
         "en": "Update dependencies\nUpdate minimum node version\nFix ioBroker issues",
         "de": "Abhängigkeiten aktualisieren\nMindestknotenversion aktualisieren\nProbleme im Zusammenhang mit der",
@@ -80,19 +93,6 @@
         "pl": "Naprawiono błędny typ danych (liczba zamiast wartości logicznej) we wpisach profilu *_ENABLED i poprawiono ustawienie informacji o połączeniu bez wartości potwierdzenia",
         "uk": "Виправлено неправильний тип даних (число замість логічного значення) у записах профілю *_ENABLED і виправлено інформацію про підключення без значення ack",
         "zh-cn": "修复了配置文件条目 *_ENABLED 中的错误数据类型（数字而不是布尔值），并修复了没有 ack 值的设置连接信息"
-      },
-      "1.1.2": {
-        "en": "Fixed wrong datatype (string) in temperature states instead of numbers",
-        "de": "Werte in Temperaturstates wurden als String statt numbers gespeichert",
-        "ru": "Исправлен неправильный тип данных (строка) в состояниях температуры вместо чисел.",
-        "pt": "Corrigido tipo de dados errado (string) em estados de temperatura em vez de números",
-        "nl": "Probleem opgelost met het verkeerde datatype (tekenreeks) in temperatuurstatussen in plaats van getallen",
-        "fr": "Correction d'un mauvais type de données (chaîne) dans les états de température au lieu de nombres",
-        "it": "Risolto il problema con il tipo di dati (stringa) errato negli stati di temperatura anziché nei numeri",
-        "es": "Se corrigió el tipo de datos incorrecto (cadena) en los estados de temperatura en lugar de números",
-        "pl": "Naprawiono błędny typ danych (ciąg znaków) w stanach temperatury zamiast liczb",
-        "uk": "Виправлено неправильний тип даних (рядок) у температурах замість чисел",
-        "zh-cn": "修复了温度状态中错误的数据类型（字符串）而不是数字"
       }
     },
     "titleLang": {
