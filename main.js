@@ -38,6 +38,9 @@ class Valloxmv extends utils.Adapter {
             await this.setObjectNotExistsAsync(key, val.obj);
         }
 
+        // Add AUTO state for vallox firmware 3.1.4
+        await this.addAutoState();
+
         this.subscribeStates('*');
 
         // setup timer
@@ -53,6 +56,29 @@ class Valloxmv extends utils.Adapter {
         Valloxmv.validateConfig(this.config)
             .then(() => this.update())
             .catch(error => this.errorHandler(error));
+    }
+
+    async addAutoState() {
+        const obj = await this.getObjectAsync(ProfileConfig.id);
+        const autoState = ProfileConfig.obj.common.states?.[0];
+
+        if (!obj?.common || autoState === undefined) {
+            return;
+        }
+
+        const states = obj.common.states;
+        if (!states || Object.prototype.hasOwnProperty.call(states, '0')) {
+            return;
+        }
+
+        obj.common.states = {
+            0: autoState,
+            ...states,
+        };
+
+        obj.common.min = 0;
+
+        await this.setObject(ProfileConfig.id, obj);
     }
 
     update() {
@@ -71,7 +97,8 @@ class Valloxmv extends utils.Adapter {
     }
 
     setProfile(result) {
-        this.setStateAsync(ProfileConfig.id, { val: result, ack: true }).catch(error => this.errorHandler(error));
+        this.currentProfile = result;
+        this.setState(ProfileConfig.id, { val: result, ack: true }).catch(error => this.errorHandler(error));
     }
 
     setStates(result) {
@@ -82,7 +109,7 @@ class Valloxmv extends utils.Adapter {
 
             const value = vlxConfig.processingFunc(values);
 
-            this.setStateAsync(key, { val: value, ack: true }).catch(error => this.errorHandler(error));
+            this.setState(key, { val: value, ack: true }).catch(error => this.errorHandler(error));
         }
     }
 
@@ -105,7 +132,7 @@ class Valloxmv extends utils.Adapter {
      * @param {string} id
      * @param {ioBroker.State | null | undefined} state
      */
-    onStateChange(id, state) {
+    async onStateChange(id, state) {
         if (state) {
             // The state was changed
             this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
@@ -114,7 +141,15 @@ class Valloxmv extends utils.Adapter {
                 const adapter = id.indexOf('.');
                 const instance = id.indexOf('.', adapter + 1);
                 id = id.substr(instance + 1);
-                if (id === 'ACTIVE_PROFILE') {
+                if (id === ProfileConfig.id) {
+                    if (Number(state.val) === 0 && !(await this.isAutoProfileSupported())) {
+                        this.log.warn(
+                            'AUTO profile requires firmware version 3.1.4 or newer. Reverting requested profile change.',
+                        );
+                        await this.undoProfileChange();
+                        return;
+                    }
+
                     this.client.setProfile(state.val).catch(error => this.errorHandler(error));
                 } else {
                     if (VlxConfigs.has(id)) {
@@ -138,6 +173,17 @@ class Valloxmv extends utils.Adapter {
         this.connectionHandler(false);
     }
 
+    async isAutoProfileSupported() {
+        const firmware = await this.getStateAsync('A_CYC_APPL_SW_VERSION');
+        return Valloxmv.compareVersions(firmware?.val, '3.1.4') >= 0;
+    }
+
+    async undoProfileChange() {
+        const profile = await this.client.getProfile();
+        this.currentProfile = profile;
+        await this.setState(ProfileConfig.id, { val: profile, ack: true });
+    }
+
     connectionHandler(connected) {
         if (this.connection !== connected) {
             this.connection = connected;
@@ -153,6 +199,27 @@ class Valloxmv extends utils.Adapter {
 
     static async validateConfig(config) {
         new URL(`ws://${config.host}:${config.port}`);
+    }
+
+    static compareVersions(left, right) {
+        const leftParts = String(left)
+            .split('.')
+            .map(part => Number.parseInt(part, 10));
+        const rightParts = String(right)
+            .split('.')
+            .map(part => Number.parseInt(part, 10));
+        const length = Math.max(leftParts.length, rightParts.length);
+
+        for (let i = 0; i < length; i++) {
+            const leftPart = Number.isFinite(leftParts[i]) ? leftParts[i] : -1;
+            const rightPart = Number.isFinite(rightParts[i]) ? rightParts[i] : -1;
+
+            if (leftPart !== rightPart) {
+                return leftPart - rightPart;
+            }
+        }
+
+        return 0;
     }
 }
 
