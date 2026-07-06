@@ -32,7 +32,7 @@
             "type": "number",
             "label": "interval",
             "newLine": true,
-            "help": "Min. 10s",
+            "help": "interval_help",
             "min": 10,
             "xs": 12,
             "sm": 12,

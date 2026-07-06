@@ -1,6 +1,7 @@
 {
     "host": "Gastheer",
     "interval": "Interval",
+    "interval_help": "Minimaal 10 s",
     "port": "Haven",
     "valloxmv adapter settings": "Adapterinstellingen voor valloxmv"
 }

@@ -1,6 +1,7 @@
 {
     "host": "主办",
     "interval": "间隔",
+    "interval_help": "最少 10 秒",
     "port": "港口",
     "valloxmv adapter settings": "valloxmv的适配器设置"
 }

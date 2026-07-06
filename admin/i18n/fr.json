@@ -1,6 +1,7 @@
 {
     "host": "Hôte",
     "interval": "Intervalle",
+    "interval_help": "Minimum 10 s",
     "port": "Port",
     "valloxmv adapter settings": "Paramètres d'adaptateur pour valloxmv"
 }

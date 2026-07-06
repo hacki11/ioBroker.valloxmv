@@ -1,6 +1,7 @@
 {
     "host": "Gospodarz",
     "interval": "Interwał",
+    "interval_help": "Minimum 10 s",
     "port": "Port",
     "valloxmv adapter settings": "Ustawienia adaptera dla valloxmv"
 }
