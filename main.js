@@ -38,7 +38,7 @@ class Valloxmv extends utils.Adapter {
             await this.setObjectNotExistsAsync(key, val.obj);
         }
 
-        // Add AUTO state for vallox firmware 3.1.4
+        // Migrate AUTO profile to state 6 for vallox firmware 3.1.4+
         await this.addAutoState();
 
         this.subscribeStates('*');
@@ -60,26 +60,23 @@ class Valloxmv extends utils.Adapter {
 
     async addAutoState() {
         const obj = await this.getObjectAsync(ProfileConfig.id);
-        const autoState = ProfileConfig.obj.common.states?.[0];
+        const profileStates = ProfileConfig.obj.common.states;
 
-        if (!obj?.common || autoState === undefined) {
+        if (obj?.type !== 'state' || !obj.common || !profileStates) {
             return;
         }
 
-        const states = obj.common.states;
-        if (!states || Object.prototype.hasOwnProperty.call(states, '0')) {
+        const stateObj = obj;
+
+        if (!stateObj.common.states) {
             return;
         }
 
-        await this.extendObject(ProfileConfig.id, {
-            common: {
-                states: {
-                    0: autoState,
-                    ...states,
-                },
-                min: 0,
-            },
-        });
+        stateObj.common.states = profileStates;
+        stateObj.common.min = 1;
+        stateObj.common.max = 6;
+
+        await this.setObject(ProfileConfig.id, stateObj);
     }
 
     update() {
@@ -143,7 +140,7 @@ class Valloxmv extends utils.Adapter {
                 const instance = id.indexOf('.', adapter + 1);
                 id = id.substr(instance + 1);
                 if (id === ProfileConfig.id) {
-                    if (Number(state.val) === 0 && !(await this.isAutoProfileSupported())) {
+                    if (Number(state.val) === 6 && !(await this.isAutoProfileSupported())) {
                         this.log.warn(
                             'AUTO profile requires firmware version 3.1.4 or newer. Reverting requested profile change.',
                         );
