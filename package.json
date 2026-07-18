@@ -23,7 +23,7 @@
     "node": ">= 22"
   },
   "dependencies": {
-    "@danielbayerlein/vallox-api": "git://github.com/hacki11/vallox-api.git#automatic-mode",
+    "@danielbayerlein/vallox-api": "^1.1.0",
     "@iobroker/adapter-core": "^3.4.1"
   },
   "devDependencies": {
