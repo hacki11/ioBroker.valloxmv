@@ -23,8 +23,9 @@ Connects your Vallox Air Ventilation system into your ioBroker home automation.
 <!--
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
-    - Use latest vallox-api with AUTOMATIC profile support
 -->
+### **WORK IN PROGRESS**
+- Use latest vallox-api with AUTOMATIC profile support
 
 ### 1.6.0 (2026-07-06)
 - (copilot) Adapter requires node.js >= 22 now
