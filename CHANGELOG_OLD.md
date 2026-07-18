@@ -1,4 +1,11 @@
 # Older changes
+## 1.3.0
+* Maintenance Release
+* Updated dependencies (iobroker-core & node)
+* Change UI to jsconConfig and fixing issues detected by repository checker
+* Update translation using i18n by iobroker/adapter-dev
+* Update year in license and readme
+
 ## 1.2.0
 * Remove NodeJS 10.x support
 * Upgrade to js-controller 3.3 and Admin 5

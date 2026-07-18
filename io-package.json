@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "valloxmv",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "news": {
+      "1.6.1": {
+        "en": "Use latest vallox-api with AUTOMATIC profile support",
+        "de": "Nutzen Sie die neueste Vallox-API mit automatischer Profilunterstützung.",
+        "ru": "Используйте последнюю версию vallox-api с поддержкой автоматического профилирования.",
+        "pt": "Use a versão mais recente da API Vallox com suporte AUTOMÁTICO para perfis.",
+        "nl": "Gebruik de nieuwste vallox-api met AUTOMATISCHE profielondersteuning.",
+        "fr": "Utilisez la dernière version de l'API Vallox avec prise en charge automatique des profils",
+        "it": "Utilizza l'ultima versione di vallox-api con supporto automatico dei profili.",
+        "es": "Utilice la última versión de vallox-api con soporte para perfiles AUTOMÁTICOS.",
+        "pl": "Użyj najnowszego vallox-api z obsługą profilu AUTOMATYCZNEGO",
+        "uk": "Використовуйте найновіший vallox-api з АВТОМАТИЧНОЮ підтримкою профілів",
+        "zh-cn": "使用支持自动配置文件的最新版 Vallox API"
+      },
       "1.6.0": {
         "en": "Adapter requires node.js >= 22 now\nAdd support for AUTOMATIC profile on firmware 3.1.4 or newer",
         "de": "Der Adapter benötigt jetzt Node.js >= 22.\nUnterstützung für das AUTOMATIC-Profil ab Firmware-Version 3.1.4 hinzufügen",
@@ -80,19 +93,6 @@
         "pl": "Usunięto obsługę NodeJS 10.x i zaktualizowano do wersji Admin5 i jscontroller 3.3",
         "uk": "Видалено підтримку NodeJS 10.x і оновлено до Admin5 і jscontroller 3.3",
         "zh-cn": "删除了 NodeJS 10.x 支持并升级到 Admin5 和 jscontroller 3.3"
-      },
-      "1.1.3": {
-        "en": "Fixed wrong datatype (number instead of boolean) in profile entries *_ENABLED and fixed setting connection info without ack value",
-        "de": "Objekte *_ENABLED wurden als Int statt bool abgespeichert und die connection info wurde mit fehlendem ack:true gespeichert.",
-        "ru": "Исправлен неправильный тип данных (число вместо логического значения) в записях профиля *_ENABLED и исправлена ​​настройка информации о соединении без значения подтверждения.",
-        "pt": "Corrigido tipo de dados errado (número em vez de booleano) nas entradas de perfil *_ENABLED e informações de conexão de configuração corrigidas sem valor de confirmação",
-        "nl": "Verkeerd datatype (nummer in plaats van Boolean) in profielitems *_ENABLED opgelost en verbindingsinfo voor instellingen zonder ack-waarde opgelost",
-        "fr": "Correction d'un mauvais type de données (nombre au lieu de booléen) dans les entrées de profil *_ENABLED et correction des informations de connexion sans valeur d'accusé de réception",
-        "it": "Risolto il problema con il tipo di dati errato (numero anziché booleano) nelle voci del profilo *_ENABLED e corrette le informazioni di connessione sull'impostazione senza valore di riconoscimento",
-        "es": "Se corrigió el tipo de datos incorrecto (número en lugar de booleano) en las entradas del perfil *_ENABLED y se corrigió la información de conexión de configuración sin valor de reconocimiento",
-        "pl": "Naprawiono błędny typ danych (liczba zamiast wartości logicznej) we wpisach profilu *_ENABLED i poprawiono ustawienie informacji o połączeniu bez wartości potwierdzenia",
-        "uk": "Виправлено неправильний тип даних (число замість логічного значення) у записах профілю *_ENABLED і виправлено інформацію про підключення без значення ack",
-        "zh-cn": "修复了配置文件条目 *_ENABLED 中的错误数据类型（数字而不是布尔值），并修复了没有 ack 值的设置连接信息"
       }
     },
     "titleLang": {
